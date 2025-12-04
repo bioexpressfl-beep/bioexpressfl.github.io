@@ -1,14 +1,14 @@
 .hero {
   height: 150vh;
-  /* film + imagem juntos */
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),   /* camada escura */
-    url('https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/LOGO%20MELHORADO.png?raw=true'); /* foto */
 
-  background-size: cover;     /* mostra mais da imagem (troque pra cover se quiser mais zoom) */
-  background-position: top;
+  /* camada escura + imagem JUNTAS */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),  /* film escuro */
+    url('https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/LOGO%20MELHORADO.png?raw=true'); /* imagem */
+
+  background-size: cover;        /* cobre tudo, sem faixa preta */
+  background-position: center;   /* foca no centro */
   background-repeat: no-repeat;
-  background-color: #000;       /* fundo preto se sobrar espaço nas bordas */
 
   display: flex;
   align-items: center;
