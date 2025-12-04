@@ -1,66 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BioExpressFL - Medical Courier Services</title>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f8f9;
+      color: #222;
     }
-    header {
-      background: #0a1a3a;
+
+    /* NAVBAR */
+    nav {
+      background: #0d2a55;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       color: white;
-      padding: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+    }
+
+    /* HEADER */
+    .hero {
+      background: linear-gradient(to right, #0d2a55, #0f875a);
+      padding: 80px 20px;
       text-align: center;
+      color: white;
     }
-    section {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    /* SECTIONS */
+    .section {
+      max-width: 1000px;
+      margin: 40px auto;
       background: white;
-      margin-top: 20px;
-      border-radius: 8px;
-      box-shadow: 0px 0px 5px #ccc;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
     }
-    h1, h2 {
+
+    h2 {
+      color: #0d2a55;
       margin-top: 0;
     }
-    footer {
-      background: #0a1a3a;
-      color: white;
+
+    ul {
+      line-height: 1.8;
+    }
+
+    /* CONTACT BOX */
+    .contact {
       text-align: center;
-      padding: 15px;
+      background: #0f875a;
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+
+    .contact a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0d2a55;
+      color: white;
       margin-top: 40px;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>BioExpressFL</h1>
-  <p>Medical Courier • Same-Day Deliveries • Central Florida</p>
-</header>
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">BIOEXPRESSFL</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#coverage">Coverage</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-<section>
-  <h2>About Us</h2>
-  <p>BioExpressFL provides fast, secure and HIPAA-aware transportation of medical specimens, pharmaceuticals, and laboratory materials across Central Florida.</p>
+<!-- HERO -->
+<section class="hero">
+  <h1>Medical Courier Services</h1>
+  <p>Secure • Fast • HIPAA-Aware • Central Florida</p>
+</section>
 
+<!-- ABOUT -->
+<section class="section" id="about">
+  <h2>About BioExpressFL</h2>
+  <p>
+    BioExpressFL is a fast, secure, and reliable medical courier serving Central Florida. 
+    We specialize in the transportation of medical specimens, pharmaceuticals, and clinical 
+    materials with strict HIPAA-aware handling and real-time communication.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
   <h2>Our Services</h2>
   <ul>
-    <li>Medical specimen transport</li>
+    <li>Medical specimen transport (blood, urine, pathology)</li>
     <li>Pharmaceutical delivery</li>
     <li>Clinic-to-lab courier routes</li>
-    <li>Same-day urgent delivery</li>
+    <li>Same-day and urgent delivery</li>
+    <li>Secure chain-of-custody handling</li>
   </ul>
+</section>
 
-  <h2>Contact</h2>
-  <p>Email: <b>bioexpressfl@gmail.com</b></p>
+<!-- COVERAGE AREA -->
+<section class="section" id="coverage">
+  <h2>Coverage Area</h2>
+  <p>We operate throughout Central Florida, including:</p>
+  <ul>
+    <li>Orlando</li>
+    <li>Clermont</li>
+    <li>Kissimmee</li>
+    <li>Winter Garden</li>
+    <li>Lake County & Orange County</li>
+  </ul>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: <a href="mailto:bioexpressfl@gmail.com">bioexpressfl@gmail.com</a></p>
   <p>Location: Central Florida</p>
 </section>
 
+<!-- FOOTER -->
 <footer>
   © 2025 BioExpressFL - All Rights Reserved
 </footer>
