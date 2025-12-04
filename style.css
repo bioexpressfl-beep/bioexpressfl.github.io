@@ -34,13 +34,14 @@
   max-width: 450px;
 }
 
-/* Ajuste da hero no celular */
+/* Ajustar imagem levemente para a esquerda no celular */
 @media (max-width: 768px) {
   .hero {
-    height: 150vh; /* reduz a altura no mobile */
-    background-size: cover; /* mostra MUITO mais da imagem */
-    background-position: left center !important; /* foca no topo da imagem */
+    background-position: left center !important; 
+    background-size: cover; /* manter igual antes */
+    height: 150vh;          /* manter o mesmo valor que você usa */
   }
+}
 
   .hero-content {
     padding: 20px;
