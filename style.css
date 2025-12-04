@@ -1,13 +1,12 @@
 .hero {
   height: 150vh;
 
-  /* camada escura + imagem JUNTAS */
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),  /* film escuro */
-    url('https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/LOGO%20MELHORADO.png?raw=true'); /* imagem */
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/LOGO%20MELHORADO.png?raw=true');
 
-  background-size: cover;        /* cobre tudo, sem faixa preta */
-  background-position: center;   /* foca no centro */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 
   display: flex;
@@ -34,20 +33,20 @@
   max-width: 450px;
 }
 
-/* Ajustar imagem levemente para a esquerda no celular */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .hero {
-    background-position: left center !important; 
-    background-size: cover; /* manter igual antes */
-    height: 100vh;          /* manter o mesmo valor que você usa */
+    background-position: left center !important;
+    background-size: cover;
+    height: 80vh;
   }
 
   .hero-content {
-    padding: 15px;
+    padding: 40px;
   }
 
   .hero h1 {
-    font-size: 5.5rem; /* menor título no mobile */
+    font-size: 4rem;
   }
 
   .hero p {
@@ -55,19 +54,18 @@
   }
 }
 
-/* Aumentar fontes do título no laptop/desktop */
+/* ===== LAPTOP / DESKTOP ===== */
 @media (min-width: 1024px) {
   .hero h1 {
-    font-size: 9.5rem;   /* aumente para o tamanho que quiser */
+    font-size: 8rem;   /* AQUI você aumenta! */
     line-height: 1.05;
   }
 
   .hero p {
-    font-size: 1.5rem;   /* opcional: texto também maior */
+    font-size: 1.5rem;
   }
 
   .hero-content {
-    max-width: 700px;    /* opcional: deixa o título respirar mais */
+    max-width: 700px;
   }
 }
-
