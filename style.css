@@ -48,7 +48,7 @@
 
   .hero p {
     font-size: 1rem;
-    max-width: 320px;   /* mantém parágrafo alinhado à esquerda */
+    max-width: 200px;   /* mantém parágrafo alinhado à esquerda, 320px antes */ 
   }
 }
 
@@ -56,11 +56,11 @@
 /* ===== LAPTOP / DESKTOP ===== */
 @media (min-width: 1024px) {
   .hero-content {
-    margin-top: -60px;   /* sobe o título – ajuste conforme quiser */
+    margin-top: -40px;   /* sobe o título – ajuste conforme quiser, -60px antes*/
   }
 
   .hero h1 {
-    font-size: 6rem;     /* diminui um pouco – estava 8rem antes */
+    font-size: 4rem;     /* diminui um pouco – estava 8rem antes */
     line-height: 1.05;
   }
 
