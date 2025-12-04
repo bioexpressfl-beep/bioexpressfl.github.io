@@ -1,7 +1,8 @@
 .hero {
-  height: 110vh;
+  height: 220vh;
   background-image: url('https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/LOGO%20MELHORADO.png?raw=true');
   background-size: cover;
+  background: rgba(0, 0, 0, 0.45);
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
