@@ -107,3 +107,10 @@
     font-size: 1rem;
   }
 }
+/* Ajustar espaço entre a imagem (hero) e os cards no CELULAR */
+@media (max-width: 768px) {
+  .section:first-of-type {
+    margin-top: -40px;   /* puxa o primeiro card pra cima, por cima da faixa */
+  }
+}
+
