@@ -43,7 +43,7 @@
   }
 
   .hero-content {
-    padding: 25px;
+    padding: 15px;
   }
 
   .hero h1 {
@@ -58,7 +58,7 @@
 /* Aumentar fontes do título no laptop/desktop */
 @media (min-width: 1024px) {
   .hero h1 {
-    font-size: 25rem;   /* aumente para o tamanho que quiser */
+    font-size: 9.5rem;   /* aumente para o tamanho que quiser */
     line-height: 1.05;
   }
 
