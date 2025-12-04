@@ -33,3 +33,25 @@
   margin-top: 20px;
   max-width: 450px;
 }
+
+/* Ajuste da hero no celular */
+@media (max-width: 768px) {
+  .hero {
+    height: 120vh; /* reduz a altura no mobile */
+    background-size: contain; /* mostra MUITO mais da imagem */
+    background-position: top; /* foca no topo da imagem */
+  }
+
+  .hero-content {
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem; /* menor título no mobile */
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
