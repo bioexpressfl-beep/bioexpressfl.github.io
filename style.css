@@ -1,5 +1,5 @@
 .hero {
-  height: 220vh;
+  height: 150vh;
   /* film + imagem juntos */
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),   /* camada escura */
