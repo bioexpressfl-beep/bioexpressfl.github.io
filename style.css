@@ -36,11 +36,12 @@
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .hero {
-    /* mais zoom na imagem = mais fundo cortado */
-    background-size: 180%;           /* aumenta o zoom da imagem no mobile */
-    background-position: center top; /* foca mais em cima */
-    height: 100vh;                   /* menos altura pra ficar mais “cheio” */
-    align-items: flex-start;         /* texto vai pra parte de cima */
+    /* Corta cerca de 20% do fundo */
+    background-size: 210%;     /* antes 180% → mais zoom = corta mais a parte de baixo */
+    background-position: center -10%;  /* empurra a imagem pra cima */
+
+    height: 100vh;
+    align-items: flex-start;
     padding-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
