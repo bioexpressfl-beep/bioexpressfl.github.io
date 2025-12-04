@@ -36,26 +36,42 @@
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .hero {
-    /* Corta cerca de 20% do fundo */
+    /* mais zoom pra cortar o fundo */
     background-size: 210%;
     background-position: center -10%;
--   height: 100vh;
-+   height: 120vh;          /* mais alto = some a faixa bege */
+    min-height: 100vh;     /* ocupa pelo menos a tela toda */
+    height: auto;          /* cresce se o conteúdo for maior */
     align-items: flex-start;
     padding-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 40px;  /* evita “faixa” logo abaixo do conteúdo */
   }
 
+  .hero-content {
+    text-align: left;
+    max-width: 320px;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.05;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    max-width: 220px;
+  }
+}
 
 /* ===== LAPTOP / DESKTOP ===== */
 @media (min-width: 1024px) {
   .hero-content {
-    margin-top: -160px;   /* antes -80px → sobe ~15–20% mais */
+    margin-top: -160px;   /* sobe o título no desktop */
   }
 
   .hero h1 {
-    font-size: 5.5rem;      /* um pouco menor que o 4.2rem padrão */
+    font-size: 5.5rem;    /* maior que o padrão */
     line-height: 1.05;
   }
 
@@ -63,6 +79,8 @@
     font-size: 1.3rem;
   }
 }
+
+/* BOTÃO HERO */
 .hero-btn {
   display: inline-block;
   margin-top: 30px;
@@ -81,10 +99,11 @@
   filter: brightness(1.12);
   transform: translateY(-2px);
 }
+
+/* BOTÃO HERO NO MOBILE */
 @media (max-width: 768px) {
   .hero-btn {
     padding: 12px 22px;
     font-size: 1rem;
   }
 }
-
