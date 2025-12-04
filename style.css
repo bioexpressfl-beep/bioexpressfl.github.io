@@ -114,14 +114,22 @@
   }
 }
 /* LINKS DO MENU (DESKTOP) — negrito e mais à direita */
+/* MENU — negrito e totalmente para a direita (desktop) */
 @media (min-width: 1024px) {
-  nav ul li a {
-    font-weight: 700 !important;  /* deixa em negrito */
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  nav {
-    margin-left: auto;            /* empurra o menu para a direita */
-    margin-right: 60px;           /* ajuste fino (pode aumentar para 80px ou 100px) */
+  header nav {
+    margin-left: auto !important;
+    margin-right: 120px !important;  /* ajuste maior pra ver diferença */
+  }
+
+  header nav ul li a {
+    font-weight: 700 !important;     /* NEGRITO de verdade */
   }
 }
 
