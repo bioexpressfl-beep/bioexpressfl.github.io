@@ -59,7 +59,7 @@
 /* Aumentar fontes do título no laptop/desktop */
 @media (min-width: 1024px) {
   .hero h1 {
-    font-size: 9.2rem;   /* aumente para o tamanho que quiser */
+    font-size: 15rem;   /* aumente para o tamanho que quiser */
     line-height: 1.05;
   }
 
