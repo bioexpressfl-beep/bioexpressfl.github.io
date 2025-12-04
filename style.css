@@ -1,41 +1,18 @@
-/* HERO FINAL CORRIGIDO */
 .hero {
-  position: relative;
-  height: 90vh;                 /* altura do bloco */
-  min-height: 380px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 60px;
-  color: white;
-
-  /* sua imagem original */
+  height: 110vh;
   background-image: url('https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/LOGO%20MELHORADO.png?raw=true');
-  background-size: contain;     /* mostra mais da imagem */
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* fundo preto atrás da imagem (para não ficar bege) */
-  background-color: #000;
+  display: flex;
+  align-items: center;
+  padding: 60px;
 }
 
-/* CAMADA FILM ESCURO */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* ajuste aqui para mais escuro */
-  z-index: 0;
-}
-
-/* TEXTO POR CIMA DO OVERLAY */
 .hero-content {
-  position: relative;
-  z-index: 2;
   max-width: 600px;
 }
 
-/* TÍTULO */
 .hero h1 {
   color: white;
   font-size: 4.2rem;
@@ -44,10 +21,84 @@
   text-transform: uppercase;
 }
 
-/* PARÁGRAFO */
 .hero p {
   color: white;
   font-size: 1.3rem;
   margin-top: 20px;
   max-width: 450px;
 }
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* HERO COM FOTO + FILME ESCURO */
+  .hero {
+    position: relative;
+    height: 60vh;               /* altura do bloco (pode ajustar) */
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+
+    /* 👇 aqui você coloca sua foto */
+    background-image: url('sua-foto.jpg');
+    background-size: cover;     /* se quiser ver mais da foto, pode testar "contain" */
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* CAMADA ESCURA POR CIMA DA FOTO */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;                   /* top/right/bottom/left: 0 */
+    background: rgba(0, 0, 0, 0.45); /* deixa mais escuro: aumente p/ 0.5, 0.6... */
+  }
+
+  /* TEXTO POR CIMA DA CAMADA ESCURA */
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* RESTO DO SITE */
+  section {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px #ccc;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  footer {
+    background: #0a1a3a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+  }
+</style>
