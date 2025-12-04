@@ -37,9 +37,9 @@
 /* Ajuste da hero no celular */
 @media (max-width: 768px) {
   .hero {
-    height: 120vh; /* reduz a altura no mobile */
-    background-size: contain; /* mostra MUITO mais da imagem */
-    background-position: top; /* foca no topo da imagem */
+    height: 100vh; /* reduz a altura no mobile */
+    background-size: 130%; /* mostra MUITO mais da imagem */
+    background-position: center; /* foca no topo da imagem */
   }
 
   .hero-content {
