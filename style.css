@@ -39,7 +39,7 @@
   .hero {
     height: 100vh; /* reduz a altura no mobile */
     background-size: cover; /* mostra MUITO mais da imagem */
-    background-position: center; /* foca no topo da imagem */
+    background-position: left; /* foca no topo da imagem */
   }
 
   .hero-content {
