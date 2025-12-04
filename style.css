@@ -35,37 +35,36 @@
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  .hero {
-    background-position: left center !important;
-    background-size: cover;
-    height: 80vh;
-  }
-
   .hero-content {
-    padding: 40px;
+    padding-left: 10px !important;   /* empurra o texto para a esquerda */
+    padding-right: 20px;
+    text-align: left !important;     /* texto alinhado à esquerda */
   }
 
   .hero h1 {
-    font-size: 4rem;
-  }
-
-  .hero p {
-    font-size: 1.1rem;
-  }
-}
-
-/* ===== LAPTOP / DESKTOP ===== */
-@media (min-width: 1024px) {
-  .hero h1 {
-    font-size: 8rem;   /* AQUI você aumenta! */
+    font-size: 3.5rem;   /* opcional: um pouco menor no mobile */
     line-height: 1.05;
   }
 
   .hero p {
-    font-size: 1.5rem;
+    font-size: 1rem;
+    max-width: 320px;   /* mantém parágrafo alinhado à esquerda */
+  }
+}
+
+
+/* ===== LAPTOP / DESKTOP ===== */
+@media (min-width: 1024px) {
+  .hero-content {
+    margin-top: -60px;   /* sobe o título – ajuste conforme quiser */
   }
 
-  .hero-content {
-    max-width: 700px;
+  .hero h1 {
+    font-size: 6rem;     /* diminui um pouco – estava 8rem antes */
+    line-height: 1.05;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
   }
 }
