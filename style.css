@@ -39,7 +39,7 @@
   .hero {
     background-position: left center !important; 
     background-size: cover; /* manter igual antes */
-    height: 150vh;          /* manter o mesmo valor que você usa */
+    height: 80vh;          /* manter o mesmo valor que você usa */
   }
 }
 
