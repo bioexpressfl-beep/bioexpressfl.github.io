@@ -36,30 +36,16 @@
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .hero {
-    /* Corta cerca de 20% do fundo */
-    background-size: 210%;     /* antes 180% → mais zoom = corta mais a parte de baixo */
-    background-position: center -10%;  /* empurra a imagem pra cima */
-
-    height: 100vh;
+    background-size: 210%;
+    background-position: center -10%;
+-   height: 100vh;
++   min-height: 100vh;   /* garante no mínimo a altura da tela */
++   height: auto;        /* mas deixa crescer se o conteúdo passar disso */
     align-items: flex-start;
     padding-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
-  }
-
-  .hero-content {
-    text-align: left;
-    max-width: 320px;
-  }
-
-  .hero h1 {
-    font-size: 3.5rem;
-    line-height: 1.05;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    max-width: 220px;
+    padding-bottom: 40px; /* pra não cortar nada embaixo */
   }
 }
 
