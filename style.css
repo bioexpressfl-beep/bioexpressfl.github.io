@@ -113,4 +113,15 @@
     margin-top: -40px;   /* puxa o primeiro card pra cima, por cima da faixa */
   }
 }
+/* LINKS DO MENU (DESKTOP) — negrito e mais à direita */
+@media (min-width: 1024px) {
+  nav ul li a {
+    font-weight: 700 !important;  /* deixa em negrito */
+  }
+
+  nav {
+    margin-left: auto;            /* empurra o menu para a direita */
+    margin-right: 60px;           /* ajuste fino (pode aumentar para 80px ou 100px) */
+  }
+}
 
