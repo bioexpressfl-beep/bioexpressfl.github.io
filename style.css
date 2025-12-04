@@ -48,7 +48,7 @@
   }
 
   .hero h1 {
-    font-size: 2.6rem; /* menor título no mobile */
+    font-size: 4rem; /* menor título no mobile */
   }
 
   .hero p {
@@ -59,7 +59,7 @@
 /* Aumentar fontes do título no laptop/desktop */
 @media (min-width: 1024px) {
   .hero h1 {
-    font-size: 15rem;   /* aumente para o tamanho que quiser */
+    font-size: 30rem;   /* aumente para o tamanho que quiser */
     line-height: 1.05;
   }
 
