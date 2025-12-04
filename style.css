@@ -39,15 +39,15 @@
   .hero {
     background-position: left center !important; 
     background-size: cover; /* manter igual antes */
-    height: 80vh;          /* manter o mesmo valor que você usa */
+    height: 100vh;          /* manter o mesmo valor que você usa */
   }
 
   .hero-content {
-    padding: 40px;
+    padding: 25px;
   }
 
   .hero h1 {
-    font-size: 10rem; /* menor título no mobile */
+    font-size: 5.5rem; /* menor título no mobile */
   }
 
   .hero p {
