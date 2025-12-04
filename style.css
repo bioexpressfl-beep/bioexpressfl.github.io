@@ -6,7 +6,7 @@
     url('https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/LOGO%20MELHORADO.png?raw=true'); /* foto */
 
   background-size: cover;     /* mostra mais da imagem (troque pra cover se quiser mais zoom) */
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-color: #000;       /* fundo preto se sobrar espaço nas bordas */
 
