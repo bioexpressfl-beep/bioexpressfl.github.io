@@ -55,3 +55,20 @@
     font-size: 1.1rem;
   }
 }
+
+/* Aumentar fontes do título no laptop/desktop */
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 5.2rem;   /* aumente para o tamanho que quiser */
+    line-height: 1.05;
+  }
+
+  .hero p {
+    font-size: 1.5rem;   /* opcional: texto também maior */
+  }
+
+  .hero-content {
+    max-width: 700px;    /* opcional: deixa o título respirar mais */
+  }
+}
+
