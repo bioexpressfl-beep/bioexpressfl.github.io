@@ -56,7 +56,7 @@
 /* ===== LAPTOP / DESKTOP ===== */
 @media (min-width: 1024px) {
   .hero-content {
-    margin-top: -40px;   /* sobe o título – ajuste conforme quiser, -60px antes*/
+    margin-top: -80px;   /* sobe o título – ajuste conforme quiser, -60px antes*/
   }
 
   .hero h1 {
