@@ -34,24 +34,27 @@
   max-width: 450px;
 }
 
-/* Ajuste da hero no celular */
+/* Mostrar a imagem inteira no celular */
 @media (max-width: 768px) {
   .hero {
-    height: 100vh; /* reduz a altura no mobile */
-    background-size: cover; /* mostra MUITO mais da imagem */
-    background-position: left; /* foca no topo da imagem */
+    height: auto; /* deixa a imagem ajustar a própria altura */
+    padding: 40px 20px;
+
+    background-size: contain !important; /* mostra 100% da imagem */
+    background-position: top center !important;
+    background-repeat: no-repeat;
   }
 
   .hero-content {
-    padding: 20px;
+    margin-top: 60vh;  /* empurra o texto para baixo da imagem */
+    text-align: center;
   }
 
   .hero h1 {
-    font-size: 2.6rem; /* menor título no mobile */
+    font-size: 2.4rem;
   }
 
   .hero p {
     font-size: 1.1rem;
   }
 }
-
