@@ -113,23 +113,4 @@
     margin-top: -40px;   /* puxa o primeiro card pra cima, por cima da faixa */
   }
 }
-/* LINKS DO MENU (DESKTOP) — negrito e mais à direita */
-/* MENU — negrito e totalmente para a direita (desktop) */
-@media (min-width: 1024px) {
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  header nav {
-    margin-left: auto !important;
-    margin-right: 120px !important;  /* ajuste maior pra ver diferença */
-  }
-
-  header nav ul li a {
-    font-weight: 700 !important;     /* NEGRITO de verdade */
-  }
-}
 
