@@ -1,116 +1,27 @@
-.hero {
-  height: 150vh;
-
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url('https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/LOGO%20MELHORADO.png?raw=true');
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  align-items: center;
-  padding: 60px;
-}
-
-.hero-content {
-  max-width: 600px;
-}
-
-.hero h1 {
-  color: white;
-  font-size: 4.2rem;
-  font-weight: 900;
-  line-height: 1.1;
-  text-transform: uppercase;
-}
-
-.hero p {
-  color: white;
-  font-size: 1.3rem;
-  margin-top: 20px;
-  max-width: 450px;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-  .hero {
-    /* mais zoom pra cortar o fundo */
-    background-size: 210%;
-    background-position: center -10%;
-    min-height: 100vh;     /* ocupa pelo menos a tela toda */
-    height: auto;          /* cresce se o conteúdo for maior */
-    align-items: flex-start;
-    padding-top: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 40px;  /* evita “faixa” logo abaixo do conteúdo */
-  }
-
-  .hero-content {
-    text-align: left;
-    max-width: 320px;
-  }
-
-  .hero h1 {
-    font-size: 3.5rem;
-    line-height: 1.05;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    max-width: 220px;
-  }
-}
-
-/* ===== LAPTOP / DESKTOP ===== */
+/* ===== DESKTOP HEADER FIX ===== */
 @media (min-width: 1024px) {
-  .hero-content {
-    margin-top: -160px;   /* sobe o título no desktop */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 28px;          /* espaço entre menu e botão */
+    margin-left: auto;  /* empurra tudo pra direita */
   }
 
-  .hero h1 {
-    font-size: 5.5rem;    /* maior que o padrão */
-    line-height: 1.05;
+  .header-right nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
-  .hero p {
-    font-size: 1.3rem;
+  .header-right nav ul li {
+    display: inline-block;
+    white-space: nowrap; /* evita quebrar linhas tipo “Ser- vices” */
+  }
+
+  .header-right nav ul li a {
+    font-weight: 700;   /* negrito no menu */
   }
 }
-
-/* BOTÃO HERO */
-.hero-btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 28px;
-  background: #05a254;      /* verde padrão */
-  color: white;             /* letra branca */
-  font-size: 1.1rem;
-  font-weight: 700;
-  border-radius: 999px;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  transition: 0.2s ease-in-out;
-}
-
-.hero-btn:hover {
-  filter: brightness(1.12);
-  transform: translateY(-2px);
-}
-
-/* BOTÃO HERO NO MOBILE */
-@media (max-width: 768px) {
-  .hero-btn {
-    padding: 12px 22px;
-    font-size: 1rem;
-  }
-}
-/* Ajustar espaço entre a imagem (hero) e os cards no CELULAR */
-@media (max-width: 768px) {
-  .section:first-of-type {
-    margin-top: -40px;   /* puxa o primeiro card pra cima, por cima da faixa */
-  }
-}
-
