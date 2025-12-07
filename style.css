@@ -178,3 +178,12 @@
   }
 }
 
+.field-hint {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+
