@@ -43,30 +43,6 @@
       text-decoration: none;
     }
 
-    /* ====== VÍDEO DE FUNDO ====== */
-    .video-bg {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      z-index: -2;
-    }
-
-    .video-bg video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.9); /* vídeo quase na cor original, não escuro */
-    }
-
-    /* overlay bem CLARO para tema claro */
-    .video-overlay {
-      position: fixed;
-      inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(255,255,255,0.75), rgba(255,255,255,0.96));
-      z-index: -1;
-    }
-
     /* ====== NAVBAR ====== */
     header {
       position: fixed;
@@ -166,11 +142,27 @@
     }
 
     .hero {
+      position: relative; /* agora o vídeo fica preso ao hero */
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 6rem 1.5rem 4rem;
+      overflow: hidden; /* corta o vídeo só dentro do hero */
+    }
+
+    /* VÍDEO SÓ NO HERO */
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .hero-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .hero-inner {
@@ -711,16 +703,6 @@
   </style>
 </head>
 <body>
-  <!-- VÍDEO DE FUNDO -->
- <div class="video-bg">
-    <video autoplay muted loop playsinline>
-      <source src="26732-360259372_small.mp4" type="video/mp4">
-      <!-- Se quiser, pode colocar um texto fallback aqui -->
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  <div class="video-overlay"></div>
-  
   <!-- NAVBAR -->
   <header>
     <div class="nav-container">
@@ -748,6 +730,13 @@
   <!-- HERO -->
   <main>
     <section class="hero">
+      <!-- VÍDEO SÓ NO HERO -->
+      <div class="hero-video">
+        <video autoplay muted loop playsinline>
+          <source src="26732-360259372_small.mp4" type="video/mp4">
+        </video>
+      </div>
+
       <div class="hero-inner fade-section">
         <div class="hero-card">
           <div class="eyebrow">
