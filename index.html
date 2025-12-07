@@ -897,107 +897,154 @@
   color: var(--text-muted);
 }
    
-    <section id="contact" class="fade-section">
+<!-- CONTACT / BOOK NOW -->
+<section id="contact" class="fade-section">
   <div class="section-inner">
     <div class="contact-card">
+      <!-- LADO ESQUERDO – INFO + IMAGEM -->
       <div class="contact-side">
-        <!-- Book now / Request a quote / infos -->
-
-
-  </style>
-</head>
-<body>
-  <!-- NAVBAR -->
-  <header>
-    <div class="nav-container">
-     <div class="logo-area">
-  <img src="https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/Logo1.png?raw=true" alt="BioExpressFL logo">
-</div>
-
-
-      <div class="nav-toggle" id="navToggle">
-        <span></span>
-      </div>
-
-      <nav id="mainNav">
-        <ul>
-          <li><a href="ABOUT.HTML">Who we are</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#why">Why us</a></li>
-          <li><a href="#contact" class="nav-cta">Get a quote</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <main>
-    <section class="hero">
-      <!-- VÍDEO SÓ NO HERO -->
-      <div class="hero-video">
-        <video autoplay muted loop playsinline>
-          <source src="26732-360259372_small.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="hero-inner fade-section">
-        <div class="hero-card">
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            Same-day medical courier
-          </div>
-
-          <h1>
-            <span class="highlight">FAST secure medical delivery</span>
-          </h1>
-
-          <p class="hero-subtitle">
-            Fast and secure same-day medical courier services for labs, clinics, and hospitals.
-          </p>
-
-          <div class="hero-tags">
-            <span class="hero-tag">Specimens &amp; lab samples</span>
-            <span class="hero-tag">STAT runs</span>
-            <span class="hero-tag">Pharmacy &amp; supplies</span>
-            <span class="hero-tag">HIPAA-aware operations</span>
-          </div>
-
-          <div class="hero-actions">
-            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-              Request a quote <span class="arrow">→</span>
-            </button>
-            <button class="btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-              Learn more
-            </button>
-          </div>
+        <div class="contact-image-wrap">
+          <img
+            src="https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/ChatGPT%20Image%20Oct%2018,%202025,%2011_55_57%20PM.png?raw=true"
+            alt="BioExpressFL medical courier"
+          >
         </div>
 
-        <div class="hero-stats fade-section">
-          <div class="stat-card">
-            <div class="stat-label">Average pick-up time</div>
-            <div class="stat-value">&lt; 45 min</div>
-            <div class="stat-note">From order confirmation within our coverage area.</div>
+        <div class="section-kicker">Book now</div>
+        <h2 class="section-title">Request a quote</h2>
+        <p class="contact-lead">
+          Share a few details about your route and we’ll send back a tailored quote for your lab,
+          clinic, or hospital network.
+        </p>
+
+        <div class="contact-info-cards">
+          <div class="contact-info-card">
+            <div class="contact-icon-circle">📞</div>
+            <div class="contact-info-main">
+              <div class="contact-info-title">Phone</div>
+              <div class="contact-info-text">Add your main number here</div>
+            </div>
           </div>
 
-          <div class="stat-card">
-            <div class="stat-label">On-time delivery rate</div>
-            <div class="stat-value">99.2%</div>
-            <div class="stat-note">Route planning focused on time-sensitive healthcare runs.</div>
+          <div class="contact-info-card">
+            <div class="contact-icon-circle">✉️</div>
+            <div class="contact-info-main">
+              <div class="contact-info-title">Email</div>
+              <div class="contact-info-text">Contact@bioexpressfl.com</div>
+            </div>
           </div>
 
-          <div class="stat-card">
-            <div class="stat-label">Coverage</div>
-            <div class="stat-value">Central FL</div>
-            <div class="stat-note">Hospitals, clinics, labs, and pharmacies in your region.</div>
-
-            <div class="compliance-pill">
-              <span class="status-dot"></span>
-              HIPAA / OSHA aware operations
+          <div class="contact-info-card">
+            <div class="contact-icon-circle">📍</div>
+            <div class="contact-info-main">
+              <div class="contact-info-title">Service area</div>
+              <div class="contact-info-text">Central Florida · Labs · Clinics · Hospitals</div>
             </div>
           </div>
         </div>
+
+        <p class="contact-small-note">
+          Prefer e-mail? Send route details directly to <strong>Contact@bioexpressfl.com</strong>.
+        </p>
       </div>
-    </section>
+
+      <!-- LADO DIREITO – FORM -->
+      <form
+        class="contact-form"
+        action="mailto:Contact@bioexpressfl.com"
+        method="POST"
+        enctype="text/plain"
+      >
+        <div class="field-row">
+          <div class="field">
+            <label for="name">Customer / Company name *</label>
+            <input id="name" name="Customer/Company" type="text" required placeholder="Clinic, lab, or hospital name">
+          </div>
+          <div class="field">
+            <label for="phone">Phone *</label>
+            <input id="phone" name="Phone" type="tel" required placeholder="+1 (___) ___-____">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="email">Email *</label>
+            <input id="email" name="Email" type="email" required placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="packages">Number of packages</label>
+            <input id="packages" name="Number of packages" type="number" min="1" placeholder="e.g. 3">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="serviceType">Service type *</label>
+            <select id="serviceType" name="Service type" required>
+              <option value="">Select service type</option>
+              <option value="Specimens & lab samples">Specimens &amp; lab samples</option>
+              <option value="Pharmacy & supplies">Pharmacy &amp; supplies</option>
+              <option value="Internal courier / documents">Internal courier / documents</option>
+              <option value="STAT / on-demand">STAT / on-demand</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="weight">Total package weight (approx.)</label>
+            <input id="weight" name="Total weight" type="text" placeholder="e.g. 10 lb">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="pickupDate">Pickup date</label>
+            <input id="pickupDate" name="Pickup date" type="date">
+          </div>
+          <div class="field">
+            <label for="deliveryDate">Delivery date</label>
+            <input id="deliveryDate" name="Delivery date" type="date">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="pickupTime">Pickup time</label>
+            <input id="pickupTime" name="Pickup time" type="time">
+          </div>
+          <div class="field">
+            <label for="deliveryTime">Delivery time</label>
+            <input id="deliveryTime" name="Delivery time" type="time">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="pickupAddress">Pickup address</label>
+            <input id="pickupAddress" name="Pickup address" type="text" placeholder="Street, city, ZIP">
+          </div>
+          <div class="field">
+            <label for="deliveryAddress">Delivery address</label>
+            <input id="deliveryAddress" name="Delivery address" type="text" placeholder="Street, city, ZIP">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="Notes" rows="3" placeholder="Tell us about frequency, volume, and any special handling needs."></textarea>
+        </div>
+
+        <p class="contact-note">
+          By submitting this form you agree to be contacted by BioExpressFL regarding route design,
+          pricing, and service details.
+        </p>
+
+        <button type="submit" class="btn-primary">
+          Send quote request <span class="arrow">→</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  </section>
 
     <!-- ABOUT -->
     <section id="about" class="fade-section">
