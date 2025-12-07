@@ -711,16 +711,7 @@
   </style>
 </head>
 <body>
-  <!-- VÍDEO DE FUNDO -->
- <div class="video-bg">
-    <video autoplay muted loop playsinline>
-      <source src="26732-360259372_small.mp4" type="video/mp4">
-      <!-- Se quiser, pode colocar um texto fallback aqui -->
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  <div class="video-overlay"></div>
-  
+
   <!-- NAVBAR -->
   <header>
     <div class="nav-container">
@@ -747,7 +738,18 @@
 
   <!-- HERO -->
   <main>
-    <section class="hero">
+
+<section class="hero">
+  <div class="hero-video">
+    <video autoplay muted loop playsinline>
+      <source src="26732-360259372_small.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="hero-inner fade-section">
+    <!-- aqui continua o seu conteúdo atual (card com título, etc.) -->
+
+   <section class="hero">
       <div class="hero-inner fade-section">
         <div class="hero-card">
           <div class="eyebrow">
