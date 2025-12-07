@@ -1,54 +1,21 @@
-.hero {
-  height: 150vh;
-
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url('https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/LOGO%20MELHORADO.png?raw=true');
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  align-items: center;
-  padding: 60px;
-}
-
-.hero-content {
-  max-width: 600px;
-}
-
-.hero h1 {
-  color: white;
-  font-size: 4.2rem;
-  font-weight: 900;
-  line-height: 1.1;
-  text-transform: uppercase;
-}
-
-.hero p {
-  color: white;
-  font-size: 1.3rem;
-  margin-top: 20px;
-  max-width: 450px;
-}
-
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
+
   .hero {
-    background-size: 220%;
+    background-size: 220%;       /* um pouco mais de zoom */
     background-position: center -12%;
--   height: 100vh;
-+   min-height: 100vh;   /* garante no mínimo a altura da tela */
-+   height: auto;        /* mas deixa crescer se o conteúdo passar disso */
-   display: flex;
+    min-height: 110vh;           /* mais altura => elimina a faixa */
+    height: auto;                /* deixa crescer se necessário */
+
+    display: flex;
     align-items: flex-start;
     padding-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 60px;        /* garantindo cobertura total */
   }
-.hero-content {
+
+  .hero-content {
     text-align: left;
     max-width: 320px;
   }
@@ -61,45 +28,5 @@
   .hero p {
     font-size: 1rem;
     max-width: 220px;
-  }
-  }
-
-/* ===== LAPTOP / DESKTOP ===== */
-@media (min-width: 1024px) {
-  .hero-content {
-    margin-top: -160px;   /* antes -80px → sobe ~15–20% mais */
-  }
-
-  .hero h1 {
-    font-size: 5.5rem;      /* um pouco menor que o 4.2rem padrão */
-    line-height: 1.05;
-  }
-
-  .hero p {
-    font-size: 1.3rem;
-  }
-}
-.hero-btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 28px;
-  background: #05a254;      /* verde padrão */
-  color: white;             /* letra branca */
-  font-size: 1.1rem;
-  font-weight: 700;
-  border-radius: 999px;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  transition: 0.2s ease-in-out;
-}
-
-.hero-btn:hover {
-  filter: brightness(1.12);
-  transform: translateY(-2px);
-}
-@media (max-width: 768px) {
-  .hero-btn {
-    padding: 12px 22px;
-    font-size: 1rem;
   }
 }
