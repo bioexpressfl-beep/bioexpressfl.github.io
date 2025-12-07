@@ -1451,6 +1451,24 @@
       });
     }
 
+    // PRIVACY POLICY – abrir/fechar
+const policySection = document.getElementById("privacy-policy");
+const policyLink = document.getElementById("openPolicy");
+
+policyLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  policySection.classList.toggle("privacy-visible");
+  policySection.classList.toggle("privacy-hidden");
+  
+  // scroll suave até a policy quando abrir
+  if (policySection.classList.contains("privacy-visible")) {
+    setTimeout(() => {
+      policySection.scrollIntoView({ behavior: "smooth" });
+    }, 200);
+  }
+});
+
+
     
   </script>
 </body>
