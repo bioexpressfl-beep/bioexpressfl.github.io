@@ -569,9 +569,10 @@
       }
     }
 
+    /* ✅ AGORA SEM FICAR INVISÍVEL */
     .fade-section {
-      opacity: 0;
-      transform: translateY(18px);
+      opacity: 1;
+      transform: translateY(0);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 
@@ -682,3 +683,170 @@
   <!-- MAIN -->
   <main>
     <div class="page-inner fade-section">
+      <!-- IMAGEM HORIZONTAL DO TOPO -->
+      <section class="about-banner">
+        <img src="https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/IMAGEM%20TOPO%20ABOUT%20US.png?raw=true" alt="BioExpressFL About banner">
+      </section>
+
+      <!-- HERO / TÍTULO -->
+      <section class="about-hero">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> · About us
+        </div>
+        <h1 class="about-hero-title">Focused medical courier for healthcare providers</h1>
+        <p class="about-hero-subtitle">
+          BioExpressFL was created to give hospitals, clinics, laboratories, and pharmacies a dedicated partner
+          for time-sensitive, medical-only transportation.
+        </p>
+      </section>
+
+      <!-- GRID PRINCIPAL -->
+      <section class="about-grid">
+        <!-- LADO TEXTO -->
+        <article class="about-card">
+          <div class="floating-orb"></div>
+
+          <div class="about-section-tag">About BioExpressFL</div>
+          <h2>What we do</h2>
+
+          <p>
+            BioExpressFL manages the daily logistics behind your medical deliveries, so your team can stay focused
+            on what matters most: delivering accurate care to patients, on time.
+          </p>
+
+          <p class="muted">
+            We coordinate the transport of lab specimens, pharmaceuticals, and critical medical supplies between facilities,
+            with routes and timing aligned to the realities of labs, clinics, and hospitals – not generic logistics windows.
+          </p>
+
+          <p>
+            Our drivers are trained to respect privacy, follow clear procedures, and treat every order as a critical
+            part of the care journey – never just another package to move from point A to point B.
+          </p>
+
+          <div class="about-list-title">Our operations are built around:</div>
+          <ul class="about-list">
+            <li>Exposure-control procedures and careful handling of sensitive materials.</li>
+            <li>HIPAA and PHI-aware workflows for specimens, documentation, and records.</li>
+            <li>Driver training focused on chain-of-custody and proof-of-delivery.</li>
+            <li>Clear packaging and labeling guidelines when working with carriers and partners.</li>
+          </ul>
+
+          <div class="about-cta">
+            <a href="index.html#contact" class="btn-primary">
+              <span>Make a quote</span>
+              <span class="arrow">→</span>
+            </a>
+            <div class="about-cta-note">
+              Share your locations and volume, and we’ll outline a suggested route plan and pricing.
+            </div>
+          </div>
+        </article>
+
+        <!-- LADO LOGO / INFO -->
+        <aside class="about-side">
+          <div class="about-logo-card">
+            <img src="https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/LOGO%20MELHORADO.png?raw=true" alt="BioExpressFL emblem">
+            <p>
+              Medical courier operations with a single focus: reliable transport for healthcare providers in Central Florida.
+            </p>
+            <div class="about-pills">
+              <span class="about-pill">Specimens &amp; lab samples</span>
+              <span class="about-pill">Clinics &amp; hospitals</span>
+              <span class="about-pill">Pharmacy &amp; supplies</span>
+            </div>
+          </div>
+
+          <div class="about-meta-card">
+            <div class="about-meta-badge">Operations focus</div>
+            <ul class="about-meta-list">
+              <li><span class="dot"></span> Time-sensitive routes for healthcare.</li>
+              <li><span class="dot"></span> Chain-of-custody and proof-of-delivery.</li>
+              <li><span class="dot"></span> Clear communication with your staff.</li>
+              <li><span class="dot"></span> Room to scale as demand grows.</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <!-- CARTA DO FUNDADOR -->
+      <section class="founder-section fade-section">
+        <div class="founder-header">
+          <div class="founder-kicker">A letter from our founder</div>
+          <h2 class="founder-title">Why BioExpressFL exists</h2>
+        </div>
+
+        <div class="founder-card">
+          <div class="founder-card-inner">
+            <p>
+              Over the years working alongside healthcare teams, I saw how much time and energy was lost trying to manage
+              deliveries that should simply “just work”. Late specimens, missed cut-off times, and unclear status updates
+              don’t just create stress — they delay care.
+            </p>
+            <p>
+              BioExpressFL was built to remove that friction. Our goal is to give your staff reliable, medical-only
+              transportation that feels like an extension of your own team. From the moment an order is placed to the
+              moment it’s delivered, we want you to feel confident that everything is moving on schedule.
+            </p>
+            <p>
+              We use modern tools for routing and communication so your team can stay informed without extra steps.
+              At the same time, we take the time to understand how your lab, clinic, or hospital actually works,
+              and adapt our service to your routines, not the other way around.
+            </p>
+            <p>
+              Every client we serve is treated like a long-term partner. We’re here to help you protect patient privacy,
+              meet time-sensitive commitments, and keep your operations flowing smoothly — one delivery at a time.
+            </p>
+
+            <div class="founder-signature">
+              <div class="founder-name">Bernard Moretti</div>
+              <div class="founder-role">Founder · BioExpressFL Medical Courier</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> BioExpressFL. All rights reserved.
+  </footer>
+
+  <script>
+    // ano automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // menu mobile
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    const headerEl = document.querySelector('header');
+
+    navToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+      headerEl.classList.toggle('nav-open');
+    });
+
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        headerEl.classList.remove('nav-open');
+      });
+    });
+
+    // (opcional) animação de entrada – agora não depende disso pra aparecer
+    const fadeSections = document.querySelectorAll('.fade-section');
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    fadeSections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
