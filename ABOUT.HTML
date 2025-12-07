@@ -608,9 +608,9 @@
       }
     }
 
-   @media (max-width: 768px) {
+@media (max-width: 768px) {
+  /* empurra o conteúdo pra baixo do header fixo */
   main {
-    /* mais espaço no topo para não cortar a imagem no mobile */
     padding: 7.5rem 1.2rem 3rem;
   }
 
@@ -618,10 +618,12 @@
     padding-inline: 1.2rem;
   }
 
+  /* mostra o botão de menu (pizza) */
   .nav-toggle {
     display: inline-flex;
   }
 
+  /* dropdown do menu logo abaixo do header */
   nav {
     position: absolute;
     top: 100%;
@@ -629,26 +631,22 @@
     right: 0;
   }
 
+  /* por padrão o menu fica FECHADO (sumido) */
   nav ul {
+    display: none;  /* <— ESSENCIAL */
     flex-direction: column;
     align-items: flex-start;
     padding: 0.75rem 1.5rem 1rem;
     background: rgba(255,255,255,0.98);
     backdrop-filter: blur(18px);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.25s ease-out;
   }
 
+  /* quando o JS adiciona .open, mostramos o menu */
   nav.open ul {
-    max-height: 260px;
-  }
-
- /* esconder o botão Home só no mobile */
-  nav ul li:first-child {
-    display: none;
+    display: flex;
   }
 }
+
 
     @media (max-width: 600px) {
       .about-card {
