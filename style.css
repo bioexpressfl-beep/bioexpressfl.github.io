@@ -1,15 +1,33 @@
-.video-bg {
-  position: fixed;
+/* HERO ocupa só o topo (100% da altura da tela) */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem 4rem;
+  overflow: hidden; /* corta o vídeo só dentro do hero */
+}
+
+/* Vídeo como background só do hero */
+.hero-video {
+  position: absolute;
   inset: 0;           /* top:0; right:0; bottom:0; left:0; */
-  z-index: -2;
+  z-index: -1;        /* fica atrás do conteúdo */
   overflow: hidden;
 }
 
-.video-bg video {
+.hero-video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
+/* O resto da página (seções de baixo) fica em fundo claro normal */
+section:not(.hero) {
+  background: var(--bg-light);
+}
+
 
 /* overlay CLARO, não escuro */
 .video-overlay {
