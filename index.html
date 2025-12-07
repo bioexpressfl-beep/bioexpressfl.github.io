@@ -520,96 +520,32 @@
       font-size: 0.85rem;
     }
 
-/* ================================
-   AJUSTE FORMULÁRIO – MOBILE
-   (Service type não invade a coluna da direita)
-================================ */
-.field-row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-}
+    .field-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
 
-/* No mobile cada campo fica em UMA coluna só */
-@media (max-width: 700px) {
-  .field-row {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
+    .field label {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.78rem;
+      opacity: 0.8;
+      color: var(--text-muted);
+    }
 
-/* Garante que select, input e textarea tenham o mesmo estilo */
-.field input,
-.field textarea,
-.field select {
-  width: 100%;
-  border-radius: 10px;
-  border: 1px solid var(--border-light);
-  background: #f9fafb;
-  color: var(--text-dark);
-  padding: 0.55rem 0.75rem;
-  font: inherit;
-  resize: vertical;
-  min-height: 38px;
-}
-
-.field select {
-  cursor: pointer;
-}
-
-/* ================================
-   IMAGEM ANIMADA ATRÁS DO "BOOK NOW"
-   (lado esquerdo do cartão de contato)
-================================ */
-.contact-side {
-  position: relative;
-  overflow: hidden;
-}
-
-/* imagem de fundo com animação leve */
-.contact-side::before {
-  content: "";
-  position: absolute;
-  inset: -10px;
-  background-image: url("https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/ChatGPT%20Image%20Oct%2018,%202025,%2011_55_57%20PM.png?raw=true");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.16;                /* deixa o texto legível */
-  filter: saturate(1.05);
-  transform: scale(1.06) translateY(8px);
-  z-index: -1;
-  animation: contactImageFloat 18s ease-in-out infinite alternate;
-}
-
-/* leve gradiente por cima pra garantir contraste do texto */
-.contact-side::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255,255,255,0.85),
-    rgba(255,255,255,0.92)
-  );
-  z-index: -1;
-}
-
-/* animação suave da imagem */
-@keyframes contactImageFloat {
-  0% {
-    transform: scale(1.06) translateY(8px);
-  }
-  100% {
-    transform: scale(1.1) translateY(-6px);
-  }
-}
-
-/* No mobile, deixamos o fundo um pouco mais claro para não poluir */
-@media (max-width: 700px) {
-  .contact-side::before {
-    opacity: 0.12;
-  }
-}
-    /*=============================Separacao da ultima atualizacao */
+    .field input,
+    .field textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--border-light);
+      background: #f9fafb;
+      color: var(--text-dark);
+      padding: 0.55rem 0.75rem;
+      font: inherit;
+      resize: vertical;
+      min-height: 38px;
+    }
 
     .field input::placeholder,
     .field textarea::placeholder {
