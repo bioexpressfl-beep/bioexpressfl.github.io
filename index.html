@@ -5,24 +5,22 @@
   <title>BioExpressFL - Fast Secure Medical Delivery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      /* Paleta clara baseada no logo */
-      --primary: #00539B;        /* azul BioExpressFL */
-      --primary-dark: #003867;   /* azul mais escuro */
-      --accent: #46B549;         /* verde BioExpressFL */
+      --primary: #00539B;
+      --primary-dark: #003867;
+      --accent: #46B549;
 
-      --bg-light: #ffffff;       /* fundo branco */
-      --bg-light-2: #f4f6f9;     /* cinza bem claro */
-      --bg-glass: rgba(255, 255, 255, 0.78);
+      --bg-light: #ffffff;
+      --bg-light-2: #f4f6f9;
+      --glass: rgba(255, 255, 255, 0.75);
 
       --text-dark: #1b1f24;
       --text-muted: #5f6b76;
 
-      --border-light: rgba(0,0,0,0.08);
+      --border: rgba(0, 0, 0, 0.09);
     }
 
     * {
@@ -32,1017 +30,199 @@
     }
 
     body {
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Poppins", sans-serif;
       background: var(--bg-light);
       color: var(--text-dark);
-      overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* ====== VÍDEO DE FUNDO ====== */
-    .video-bg {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      z-index: -2;
-    }
-
-    .video-bg video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.9); /* vídeo quase na cor original, não escuro */
-    }
-
-    /* overlay bem CLARO para tema claro */
-    .video-overlay {
-      position: fixed;
-      inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(255,255,255,0.75), rgba(255,255,255,0.96));
-      z-index: -1;
-    }
-
-    /* ====== NAVBAR ====== */
+    /* ===== NAVBAR ===== */
     header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      z-index: 10;
-      backdrop-filter: blur(12px);
-      background: rgba(255, 255, 255, 0.82);
-      border-bottom: 1px solid var(--border-light);
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0.75rem 1.5rem;
+      padding: 0.8rem 1.5rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1.5rem;
-    }
-
-    .logo-area {
-      display: flex;
       align-items: center;
-      gap: 0.7rem;
     }
 
-    .logo-area img {
-      height: 44px;
-      width: auto;
-      object-fit: contain;
-      opacity: 0.96;
-    }
-
-    .logo-text {
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.82rem;
-      color: var(--primary-dark);
+    .nav-container img {
+      height: 48px;
     }
 
     nav ul {
-      list-style: none;
       display: flex;
-      align-items: center;
       gap: 1.5rem;
-      font-size: 0.9rem;
+      list-style: none;
     }
 
     nav a {
-      position: relative;
-      opacity: 0.82;
-      transition: all 0.2s ease;
+      text-decoration: none;
       color: var(--text-dark);
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -0.2rem;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      transition: width 0.2s ease;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      transition: 0.2s ease;
     }
 
     nav a:hover {
       opacity: 1;
     }
 
-    nav a:hover::after {
-      width: 100%;
-    }
-
     .nav-cta {
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(0, 83, 155, 0.25);
-      background: linear-gradient(135deg, rgba(0, 83, 155, 0.12), rgba(70, 181, 73, 0.16));
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--primary-dark);
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      font-size: 0.8rem;
     }
 
-    .nav-cta:hover {
-      background: linear-gradient(135deg, rgba(0, 83, 155, 0.2), rgba(70, 181, 73, 0.24));
-      transform: translateY(-1px);
-    }
-
-    /* ====== HERO ====== */
-    main {
-      min-height: 100vh;
-    }
-
+    /* ===== HERO ===== */
     .hero {
-      min-height: 100vh;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 6rem 1.5rem 4rem;
+      padding-top: 80px;
     }
 
-    .hero-inner {
-      max-width: 1100px;
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .hero-video video {
       width: 100%;
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
-      gap: 2rem;
-      align-items: center;
+      height: 100%;
+      object-fit: cover;
     }
 
     .hero-card {
-      background: var(--bg-glass);
-      border-radius: 22px;
+      background: var(--glass);
       padding: 2rem;
-      border: 1px solid var(--border-light);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
-      position: relative;
-      overflow: hidden;
+      border-radius: 20px;
+      max-width: 480px;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
 
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at top left, rgba(0, 83, 155, 0.15), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(70, 181, 73, 0.12), transparent 55%);
-      opacity: 0.9;
-      z-index: -1;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      opacity: 0.8;
-      margin-bottom: 0.75rem;
-      color: var(--primary-dark);
-    }
-
-    .eyebrow-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 10px var(--accent);
-    }
-
-    h1 {
-      font-size: clamp(2.1rem, 5vw, 3rem);
+    .hero h1 {
+      font-size: 2.5rem;
       line-height: 1.1;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
       color: var(--primary-dark);
     }
 
-    h1 span.highlight {
-      background: linear-gradient(120deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: 0.98rem;
-      max-width: 30rem;
+    .hero p {
+      font-size: 1rem;
       color: var(--text-muted);
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
       margin-bottom: 1.5rem;
-      font-size: 0.75rem;
-    }
-
-    .hero-tag {
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid var(--border-light);
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(12px);
-      color: var(--text-muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
     }
 
     .btn-primary {
-      padding: 0.85rem 1.6rem;
-      border-radius: 999px;
-      border: none;
+      padding: 12px 20px;
+      border-radius: 30px;
       background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: #ffffff;
       font-weight: 600;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      cursor: pointer;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
-    }
-
-    .btn-primary span.arrow {
-      font-size: 1.1rem;
-      transform: translateY(1px);
-    }
-
-    .btn-secondary {
-      padding: 0.7rem 1.2rem;
-      border-radius: 999px;
-      border: 1px solid rgba(0, 83, 155, 0.3);
-      background: rgba(255,255,255,0.9);
-      font-size: 0.85rem;
-      color: var(--primary-dark);
+      color: white;
+      border: none;
       cursor: pointer;
     }
 
-    .hero-stats {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .stat-card {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 18px;
-      padding: 1.1rem 1.2rem;
-      border: 1px solid var(--border-light);
-      backdrop-filter: blur(14px);
-      font-size: 0.8rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
-    }
-
-    .stat-label {
-      opacity: 0.7;
-      margin-bottom: 0.2rem;
-      color: var(--text-muted);
-    }
-
-    .stat-value {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 0.1rem;
-      color: var(--primary-dark);
-    }
-
-    .stat-note {
-      opacity: 0.85;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .compliance-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.4rem 0.75rem;
-      border-radius: 999px;
-      background: rgba(244,246,249,0.95);
-      border: 1px solid var(--border-light);
-      font-size: 0.7rem;
-      opacity: 0.9;
-      position: absolute;
-      bottom: 1rem;
-      right: 1.2rem;
-      z-index: 1;
-      color: var(--text-muted);
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #46B549;
-      box-shadow: 0 0 12px #46B549;
-    }
-
-    /* ====== SEÇÕES INFERIORES ====== */
+    /* ===== SEÇÕES ===== */
     section {
-      position: relative;
       padding: 4rem 1.5rem;
-    }
-
-    .section-inner {
       max-width: 1100px;
       margin: 0 auto;
     }
 
-    .section-header {
-      margin-bottom: 2.5rem;
-      max-width: 620px;
-    }
-
-    .section-kicker {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      opacity: 0.8;
-      margin-bottom: 0.4rem;
-      color: var(--primary-dark);
-    }
-
     .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
+      font-size: 2rem;
+      margin-bottom: 1rem;
       color: var(--primary-dark);
     }
 
-    .section-description {
-      opacity: 0.9;
-      font-size: 0.95rem;
+    .section-text {
+      font-size: 1rem;
       color: var(--text-muted);
+      max-width: 650px;
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 1.75rem;
-      align-items: start;
-    }
-
-    .card {
-      background: var(--bg-light-2);
-      border-radius: 20px;
-      padding: 1.6rem;
-      border: 1px solid var(--border-light);
-      font-size: 0.92rem;
-      line-height: 1.6;
-      color: var(--text-dark);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
-    }
-
-    .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.75rem;
-      color: var(--primary-dark);
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 1rem;
-      font-size: 0.75rem;
-    }
-
-    .pill {
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      background: #ffffff;
-      border: 1px solid rgba(70, 181, 73, 0.5);
-      color: var(--primary-dark);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-    }
-
-    .service-card {
-      background: var(--bg-light-2);
-      border-radius: 18px;
-      padding: 1.4rem;
-      border: 1px solid var(--border-light);
-      font-size: 0.9rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
-      color: var(--text-dark);
-    }
-
-    .service-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      opacity: 0.8;
-      margin-bottom: 0.4rem;
-      color: var(--accent);
-    }
-
-    .service-card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary-dark);
-    }
-
-    .service-meta {
-      margin-top: 0.8rem;
-      font-size: 0.8rem;
-      opacity: 0.9;
-      color: var(--text-muted);
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .why-item {
-      font-size: 0.85rem;
-      background: var(--bg-light-2);
-      border-radius: 16px;
-      padding: 1rem;
-      border: 1px solid var(--border-light);
-      color: var(--text-dark);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
-    }
-
-    .why-item strong {
-      display: block;
-      margin-bottom: 0.4rem;
-      color: var(--primary-dark);
-    }
-
-    .contact-card {
-      background: var(--bg-light);
-      border-radius: 22px;
-      padding: 2rem 1.75rem;
-      border: 1px solid var(--border-light);
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 1.5rem;
-      align-items: center;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.1);
-    }
-
-    .contact-details {
-      font-size: 0.9rem;
-      opacity: 0.95;
-      color: var(--text-muted);
-    }
-
-    .contact-details p + p {
-      margin-top: 0.4rem;
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 0.7rem;
-      font-size: 0.85rem;
-    }
-
-    .field-row {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.75rem;
-    }
-
-    .field label {
-      display: block;
-      margin-bottom: 0.2rem;
-      font-size: 0.78rem;
-      opacity: 0.8;
-      color: var(--text-muted);
-    }
-
-    .field input,
-    .field textarea {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid var(--border-light);
-      background: #f9fafb;
-      color: var(--text-dark);
-      padding: 0.55rem 0.75rem;
-      font: inherit;
-      resize: vertical;
-      min-height: 38px;
-    }
-
-    .field input::placeholder,
-    .field textarea::placeholder {
-      opacity: 0.5;
-    }
-
-    .contact-note {
-      font-size: 0.78rem;
-      opacity: 0.7;
-      margin-top: 0.25rem;
-      color: var(--text-muted);
-    }
-
-    footer {
-      padding: 1.5rem;
-      font-size: 0.78rem;
-      text-align: center;
-      opacity: 0.7;
-      background: rgba(255,255,255,0.9);
-      border-top: 1px solid var(--border-light);
-      color: var(--text-muted);
-    }
-
-    /* ====== ANIMAÇÕES ====== */
-    .fade-section {
-      opacity: 0;
-      transform: translateY(24px);
-      transition:
-        opacity 0.6s ease-out,
-        transform 0.6s ease-out;
-    }
-
-    .fade-section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ====== MOBILE ====== */
-    .nav-toggle {
-      display: none;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: 1px solid rgba(0,0,0,0.12);
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      background: rgba(255,255,255,0.9);
-    }
-
-    .nav-toggle span,
-    .nav-toggle span::before,
-    .nav-toggle span::after {
-      content: "";
-      display: block;
-      width: 16px;
-      height: 2px;
-      border-radius: 99px;
-      background: var(--primary-dark);
-      position: relative;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    .nav-toggle span::before {
-      position: absolute;
-      top: -5px;
-    }
-
-    .nav-toggle span::after {
-      position: absolute;
-      top: 5px;
-    }
-
-    .nav-open .nav-toggle span {
-      transform: rotate(45deg);
-    }
-
-    .nav-open .nav-toggle span::before {
-      transform: rotate(-90deg) translateX(-5px);
-    }
-
-    .nav-open .nav-toggle span::after {
-      opacity: 0;
-    }
-
-    @media (max-width: 900px) {
-      .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-stats {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .about-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .services-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .why-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .contact-card {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: inline-flex;
-      }
-
-      nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(255,255,255,0.98);
-        backdrop-filter: blur(18px);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.25s ease-out;
-      }
-
-      nav.open {
-        max-height: 220px;
-      }
-
-      nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0.75rem 1.5rem 1rem;
-      }
-
-      .hero {
-        padding-top: 5.5rem;
-      }
-
-      .hero-card {
-        padding: 1.5rem;
-      }
-
-      .services-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .why-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <header>
-    <div class="nav-container">
-      <div class="logo-area">
-        <!-- Novo logo -->
-        <img src="https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/PNGGG.png?raw=true" alt="BioExpressFL logo">
-        <div class="logo-text">BioExpressFL</div>
-      </div>
+<!-- NAVBAR -->
+<header>
+  <div class="nav-container">
+    <img src="https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/PNGGG.png?raw=true" alt="Logo">
 
-      <div class="nav-toggle" id="navToggle">
-        <span></span>
-      </div>
+    <nav>
+      <ul>
+        <li><a href="#about">Who we are</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-      <nav id="mainNav">
-        <ul>
-          <li><a href="#about">Who we are</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#why">Why us</a></li>
-          <li><a href="#contact" class="nav-cta">Get a quote</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <main>
-
+<!-- HERO COM VÍDEO NO TOPO -->
 <section class="hero">
+
+  <!-- VIDEO SOMENTE NO TOPO -->
   <div class="hero-video">
     <video autoplay muted loop playsinline>
       <source src="26732-360259372_small.mp4" type="video/mp4">
     </video>
   </div>
 
-  <div class="hero-inner fade-section">
-    <!-- aqui continua o seu conteúdo atual (card com título, etc.) -->
+  <!-- POPUP (GLASS CARD) -->
+  <div class="hero-card">
+    <h1>FAST Secure Medical Delivery</h1>
+    <p>Fast and secure same-day medical courier services for labs, clinics and hospitals.</p>
+    <button class="btn-primary">Request a Quote</button>
+  </div>
 
-   <section class="hero">
-      <div class="hero-inner fade-section">
-        <div class="hero-card">
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            Same-day medical courier
-          </div>
+</section>
 
-          <h1>
-            <span class="highlight">FAST secure medical delivery</span>
-          </h1>
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">Who we are</h2>
+  <p class="section-text">
+    BioExpressFL provides reliable, time-sensitive medical logistics for healthcare facilities across Central Florida.
+  </p>
+</section>
 
-          <p class="hero-subtitle">
-            Fast and secure same-day medical courier services for labs, clinics, and hospitals.
-          </p>
+<!-- SERVICES -->
+<section id="services">
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-text">
+    Specimen transport, STAT delivery, pharmacy distribution and scheduled routes for clinics, labs and hospitals.
+  </p>
+</section>
 
-          <div class="hero-tags">
-            <span class="hero-tag">Specimens &amp; lab samples</span>
-            <span class="hero-tag">STAT runs</span>
-            <span class="hero-tag">Pharmacy &amp; supplies</span>
-            <span class="hero-tag">HIPAA-aware operations</span>
-          </div>
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <p class="section-text">
+    Get in touch to schedule routes or request a quote for your healthcare facility.
+  </p>
+</section>
 
-          <div class="hero-actions">
-            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-              Request a quote <span class="arrow">→</span>
-            </button>
-            <button class="btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-              Learn more
-            </button>
-          </div>
-        </div>
-
-        <div class="hero-stats fade-section">
-          <div class="stat-card">
-            <div class="stat-label">Average pick-up time</div>
-            <div class="stat-value">&lt; 45 min</div>
-            <div class="stat-note">From order confirmation within our coverage area.</div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-label">On-time delivery rate</div>
-            <div class="stat-value">99.2%</div>
-            <div class="stat-note">Route planning focused on time-sensitive healthcare runs.</div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-label">Coverage</div>
-            <div class="stat-value">Central FL</div>
-            <div class="stat-note">Hospitals, clinics, labs, and pharmacies in your region.</div>
-
-            <div class="compliance-pill">
-              <span class="status-dot"></span>
-              HIPAA / OSHA aware operations
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="fade-section">
-      <div class="section-inner">
-        <div class="section-header">
-          <div class="section-kicker">About us</div>
-          <h2 class="section-title">Who we are</h2>
-          <p class="section-description">
-            BioExpressFL is a medical courier focused on safe, traceable, and time-critical deliveries.
-            From small clinics to hospital networks, we operate as an extension of your staff.
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <div class="card">
-            <h3>Specialized in healthcare logistics</h3>
-            <p>
-              Our procedures are built specifically for medical transport: lab specimens, pathology,
-              pharmacy items, and medical supplies.
-            </p>
-            <p>
-              Drivers are trained to follow strict protocols for handling, chain-of-custody,
-              and privacy, supporting the reliability your team needs every day.
-            </p>
-
-            <div class="pill-row">
-              <span class="pill">Chain-of-custody focus</span>
-              <span class="pill">Time-sensitive routes</span>
-              <span class="pill">Professional drivers</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Built for labs, clinics, and hospitals</h3>
-            <p>
-              We understand lab cut-off times, STAT requests, and how every delay can affect diagnostics.
-              Our routes are designed around your reality.
-            </p>
-            <p>
-              Need daily scheduled routes, on-demand STAT deliveries, or weekend coverage?
-              We help design a custom solution for your locations and volume.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="fade-section">
-      <div class="section-inner">
-        <div class="section-header">
-          <div class="section-kicker">Services</div>
-          <h2 class="section-title">What we deliver</h2>
-          <p class="section-description">
-            Core routes and on-demand solutions tailored to healthcare providers in Central Florida.
-          </p>
-        </div>
-
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-label">Labs &amp; diagnostics</div>
-            <h3>Specimen &amp; sample transport</h3>
-            <p>
-              Pickup and delivery of blood, urine, pathology slides, and other lab specimens
-              with documented chain-of-custody.
-            </p>
-            <p class="service-meta">
-              • Scheduled routes<br>
-              • STAT &amp; on-demand<br>
-              • Cut-off time planning
-            </p>
-          </div>
-
-          <div class="service-card">
-            <div class="service-label">Clinics &amp; hospitals</div>
-            <h3>Same-day internal courier</h3>
-            <p>
-              Movement of documents, records, small medical devices, and inter-facility
-              transfers between partner locations.
-            </p>
-            <p class="service-meta">
-              • Multi-stop routes<br>
-              • Real-time status updates<br>
-              • Proof-of-delivery
-            </p>
-          </div>
-
-          <div class="service-card">
-            <div class="service-label">Pharmacy</div>
-            <h3>Medications &amp; supplies</h3>
-            <p>
-              Non-narcotic pharmacy deliveries, OTC products, and essential
-              medical supplies to clinics and care facilities.
-            </p>
-            <p class="service-meta">
-              • Recurrent schedules<br>
-              • Contact-aware delivery<br>
-              • Secure handling procedures
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY US -->
-    <section id="why" class="fade-section">
-      <div class="section-inner">
-        <div class="section-header">
-          <div class="section-kicker">Why us</div>
-          <h2 class="section-title">Designed for reliability</h2>
-          <p class="section-description">
-            Not just drivers. A partner that understands the impact of every delivery on patient care.
-          </p>
-        </div>
-
-        <div class="why-grid">
-          <div class="why-item">
-            <strong>Time-critical focus</strong>
-            Routes are planned around lab cut-off times and STAT priorities,
-            not generic logistics windows.
-          </div>
-          <div class="why-item">
-            <strong>Visibility</strong>
-            Clear communication and status updates so your staff always knows where
-            critical material is.
-          </div>
-          <div class="why-item">
-            <strong>Compliance-aware</strong>
-            Operations designed with HIPAA, OSHA, and transport guidelines in mind.
-          </div>
-          <div class="why-item">
-            <strong>Flexible design</strong>
-            Start small with select routes, then scale coverage as your volume grows.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="fade-section">
-      <div class="section-inner">
-        <div class="contact-card">
-          <div>
-            <div class="section-kicker">Get started</div>
-            <h2 class="section-title">Request a pilot route or quote</h2>
-            <p class="contact-details">
-              Tell us about your labs, clinics, or hospital network and we’ll outline a route
-              plan with estimated pick-up times, SLAs, and pricing.
-            </p>
-            <p class="contact-details">
-              Aqui você pode colocar seu telefone, WhatsApp ou e-mail oficial da BioExpressFL.
-            </p>
-          </div>
-
-          <form class="contact-form">
-            <div class="field-row">
-              <div class="field">
-                <label for="name">Name</label>
-                <input id="name" type="text" placeholder="Your name">
-              </div>
-              <div class="field">
-                <label for="company">Clinic / Lab / Hospital</label>
-                <input id="company" type="text" placeholder="Organization name">
-              </div>
-            </div>
-
-            <div class="field-row">
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" type="email" placeholder="you@example.com">
-              </div>
-              <div class="field">
-                <label for="phone">Phone</label>
-                <input id="phone" type="tel" placeholder="+1 (___) ___-____">
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="message">Routes / needs</label>
-              <textarea id="message" rows="3" placeholder="Tell us about your locations, daily volume, and timing needs."></textarea>
-            </div>
-
-            <button type="submit" class="btn-primary">
-              Send request <span class="arrow">→</span>
-            </button>
-            <div class="contact-note">
-              This form is illustrative only. Connect it to your email or backend to receive submissions.
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © <span id="year"></span> BioExpressFL. All rights reserved.
-  </footer>
-
-  <script>
-    // ano automático
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // menu mobile
-    const navToggle = document.getElementById('navToggle');
-    const mainNav = document.getElementById('mainNav');
-    const headerEl = document.querySelector('header');
-
-    navToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('open');
-      headerEl.classList.toggle('nav-open');
-    });
-
-    mainNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('open');
-        headerEl.classList.remove('nav-open');
-      });
-    });
-
-    // animação de entrada das seções
-    const fadeSections = document.querySelectorAll('.fade-section');
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    fadeSections.forEach(section => observer.observe(section));
-  </script>
 </body>
 </html>
