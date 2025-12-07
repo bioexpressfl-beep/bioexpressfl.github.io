@@ -570,17 +570,15 @@
     }
 
     .fade-section {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
 
-/* você pode até manter isso para futuro, mas não é mais obrigatório */
-.fade-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ====== FOOTER ====== */
     footer {
