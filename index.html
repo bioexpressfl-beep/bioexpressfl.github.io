@@ -712,13 +712,15 @@
 </head>
 <body>
   <!-- VÍDEO DE FUNDO -->
-  <div class="video-bg">
-    <!-- IMPORTANTE: baixe seu vídeo do Streamable como "video.mp4"
-         e coloque na mesma pasta deste HTML -->
-    <video src="video.mp4" autoplay muted loop playsinline></video>
+ <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="26732-360259372_small.mp4" type="video/mp4">
+      <!-- Se quiser, pode colocar um texto fallback aqui -->
+      Your browser does not support the video tag.
+    </video>
   </div>
   <div class="video-overlay"></div>
-
+  
   <!-- NAVBAR -->
   <header>
     <div class="nav-container">
