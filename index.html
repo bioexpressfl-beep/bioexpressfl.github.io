@@ -1176,15 +1176,14 @@
       </div>
 
       <!-- LADO DIREITO – FORM -->
-      <form
-        <form
+<form
   id="quoteForm"
   class="contact-form"
   method="POST"
 >
-  <!-- CAMPO OCULTO: assunto do e-mail que você recebe -->
+  <!-- CAMPO OCULTO: assunto do e-mail -->
   <input type="hidden" name="_subject" value="New quote request - BioExpressFL">
-  <!-- CAMPO OCULTO: para evitar spam (opcional do Formspree) -->
+  <!-- ANTI-SPAM (Formspree) -->
   <input type="text" name="_gotcha" style="display:none">
 
   <div class="field-row">
@@ -1204,13 +1203,6 @@
       <input id="email" name="Email" type="email" required placeholder="you@example.com">
     </div>
     <div class="field">
-      <label for="packages">Number of packages</label>
-      <input id="packages" name="Number of packages" type="number" min="1" placeholder="e.g. 3">
-    </div>
-  </div>
-
-  <div class="field-row">
-    <div class="field">
       <label for="serviceType">Service type *</label>
       <select id="serviceType" name="Service type" required>
         <option value="">Select service type</option>
@@ -1220,68 +1212,160 @@
         <option value="STAT / on-demand">STAT / on-demand</option>
       </select>
     </div>
+  </div>
+
+  <!-- ORDEM DE PICKUP: TIME → DATE → ADDRESS (todos obrigatórios) -->
+  <div class="field-row">
     <div class="field">
-      <label for="weight">Total package weight (approx.)</label>
-      <input id="weight" name="Total weight" type="text" placeholder="e.g. 10 lb">
+      <label for="pickupTime">
+        Pickup time *
+        <span class="field-hint">Format: hh:mm AM (e.g. 09:30 AM)</span>
+      </label>
+      <input
+        id="pickupTime"
+        name="Pickup time"
+        type="time"
+        required
+        placeholder="hh:mm AM"
+      >
+    </div>
+    <div class="field">
+      <label for="pickupDate">Pickup date *</label>
+      <input id="pickupDate" name="Pickup date" type="date" required>
     </div>
   </div>
 
   <div class="field-row">
     <div class="field">
-      <label for="pickupDate">Pickup date</label>
-      <input id="pickupDate" name="Pickup date" type="date">
+      <label for="pickupAddress">Pickup address *</label>
+      <input
+        id="pickupAddress"
+        name="Pickup address"
+        type="text"
+        required
+        placeholder="Street, city, ZIP"
+      >
     </div>
     <div class="field">
-      <label for="deliveryDate">Delivery date</label>
-      <input id="deliveryDate" name="Delivery date" type="date">
+      <label for="deliveryAddress">Delivery address *</label>
+      <input
+        id="deliveryAddress"
+        name="Delivery address"
+        type="text"
+        required
+        placeholder="Street, city, ZIP"
+      >
     </div>
   </div>
 
   <div class="field-row">
     <div class="field">
-      <label for="pickupTime">Pickup time</label>
-      <input id="pickupTime" name="Pickup time" type="time">
+      <label for="packages">Number of packages *</label>
+      <input
+        id="packages"
+        name="Number of packages"
+        type="number"
+        min="1"
+        required
+        placeholder="e.g. 3"
+      >
     </div>
     <div class="field">
-      <label for="deliveryTime">Delivery time</label>
-      <input id="deliveryTime" name="Delivery time" type="time">
+      <label for="weight">Total package weight (approx.) *</label>
+      <input
+        id="weight"
+        name="Total weight"
+        type="text"
+        required
+        placeholder="e.g. 10 lb"
+      >
     </div>
   </div>
 
   <div class="field-row">
     <div class="field">
-      <label for="pickupAddress">Pickup address</label>
-      <input id="pickupAddress" name="Pickup address" type="text" placeholder="Street, city, ZIP">
+      <label for="deliveryTime">
+        Delivery time *
+        <span class="field-hint">Format: hh:mm AM (e.g. 11:00 AM)</span>
+      </label>
+      <input
+        id="deliveryTime"
+        name="Delivery time"
+        type="time"
+        required
+        placeholder="hh:mm AM"
+      >
     </div>
     <div class="field">
-      <label for="deliveryAddress">Delivery address</label>
-      <input id="deliveryAddress" name="Delivery address" type="text" placeholder="Street, city, ZIP">
+      <label for="deliveryDate">Delivery date *</label>
+      <input id="deliveryDate" name="Delivery date" type="date" required>
     </div>
   </div>
 
   <div class="field">
     <label for="notes">Notes</label>
-    <textarea id="notes" name="Notes" rows="3" placeholder="Tell us about frequency, volume, and any special handling needs."></textarea>
+    <textarea
+      id="notes"
+      name="Notes"
+      rows="3"
+      placeholder="Tell us about frequency, volume, and any special handling needs."
+    ></textarea>
   </div>
 
+  <!-- PRIVACY + STATUS -->
   <p class="contact-note">
-    By submitting this form you agree to be contacted by BioExpressFL regarding route design,
-    pricing, and service details.
+    By clicking <strong>Submit</strong> you agree to our
+    <a href="#privacy-policy">Privacy Policy</a>.
   </p>
 
   <button type="submit" class="btn-primary">
-    Send quote request <span class="arrow">→</span>
+    Submit <span class="arrow">→</span>
   </button>
 
-  <!-- Mensagem de status -->
   <div id="quoteStatus" class="contact-note" style="margin-top:0.5rem;"></div>
+</form>
 
-   </form>
     </div>
   </div>
 </section>
   </main>
 
+  
+<!--- SESSAO ADICIONADA PRIVACY --->
+  
+<section id="privacy-policy" class="fade-section" style="padding-top:2rem;">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-kicker">Privacy</div>
+      <h2 class="section-title">Privacy Policy</h2>
+      <p class="section-description">
+        BioExpressFL collects the information you submit through this form only to contact you,
+        prepare route designs, and provide pricing for our medical courier services.
+      </p>
+    </div>
+
+    <div class="card">
+      <p>
+        We do not sell or share your contact details or route information with third parties
+        for marketing purposes. Your data may be stored in secure third-party tools
+        (such as e-mail and routing platforms) strictly to operate and improve our
+        services to your organization.
+      </p>
+      <p>
+        Please avoid including protected health information (PHI) or patient identifiers
+        in this form. If PHI is required for operations, we will coordinate a secure channel
+        with your team.
+      </p>
+      <p>
+        If you want us to update or remove your information, contact us at
+        <strong>Contact@bioexpressfl.com</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+  
   <footer>
     © <span id="year"></span> BioExpressFL. All rights reserved.
   </footer>
