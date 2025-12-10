@@ -298,7 +298,9 @@
 
 
  .hero-stats {
- position: relative; /* importante para o absoluto do wrapper */
+  display: grid;
+  gap: 1rem;
+  position: relative; /* importante para o absoluto do wrapper */
 }
 
 
@@ -306,18 +308,18 @@
 /* CONTAINER DO PILL + ÍCONES – CANTO INFERIOR DIREITO */
 .compliance-wrapper {
   position: absolute;
-  right: 0.8rem;        /* levemente pra dentro, sem forçar pra fora */
-  bottom: 0.2rem;       /* altura do conjunto */
+  right: 0.5rem;        /* levemente pra dentro, sem forçar pra fora */
+  bottom: -0.8rem;       /* altura do conjunto */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.8rem;           /* distância ENTRE faixa e ícones (maior pra não encostar) */
+  gap: 2.5rem;           /* distância ENTRE faixa e ícones (maior pra não encostar) */
 }
 
 /* FAIXA HIPAA FININHA */
 .compliance-pill {
   display: inline-flex;
-  align-items: center;
+  align-items: right-center;
   gap: 0.45rem;
   padding: 0.35rem 1rem;
   border-radius: 999px;
@@ -340,7 +342,7 @@
 .compliance-badges {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: -3.5rem;
 }
 
 /* ÍCONES MAIORES */
@@ -1121,38 +1123,7 @@
     margin-top: 0.3rem;
   }
 }
-/* BLOCO PILL + SELOS */
-.compliance-wrapper {
-  position: absolute;
-  right: 1.2rem;
-  bottom: 0.75rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.4rem;
-}
 
-/* pill visual */
-.compliance-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.4rem 0.75rem;
-  border-radius: 999px;
-  background: rgba(244,246,249,0.9);
-  border: 1px solid var(--border-light);
-  font-size: 0.7rem;
-  opacity: 0.9;
-  color: var(--text-muted);
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: #46B549;
-  box-shadow: 0 0 12px #46B549;
-}
 
 /* selos redondos */
 .compliance-badges {
@@ -1279,12 +1250,7 @@
           <div class="stat-note">Hospitals, clinics, labs, and pharmacies in your region.</div>
         </div>
 
-         <!-- BLOCO: faixa + ícones -->
-  <div class="compliance-wrapper">
-    <div class="compliance-pill">
-      <span class="status-dot"></span>
-      HIPAA / OSHA aware operations
-    </div>
+     
 
     <div class="compliance-badges">
       <!-- TROQUE OS SRC PELOS LINKS REAIS DAS SUAS IMAGENS -->
