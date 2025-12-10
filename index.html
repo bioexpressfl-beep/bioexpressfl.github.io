@@ -987,6 +987,23 @@
   bottom: 1rem;
   right: 1rem;
 }
+
+    /* ====== FIX MOBILE PARA O COMPLIANCE PILL ====== */
+@media (max-width: 768px) {
+  .hero-stats {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding-bottom: 0; /* garante que não cria espaço estranho */
+  }
+
+  .compliance-pill {
+    position: static !important;   /* CANCELA o absolute no mobile */
+    margin-top: 0.5rem;
+    justify-self: flex-end;        /* alinha à direita */
+  }
+}
+
     
   </style>
 </head>
