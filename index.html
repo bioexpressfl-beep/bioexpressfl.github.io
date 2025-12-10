@@ -297,6 +297,62 @@
       display: grid;
       gap: 1rem;
     }
+.hero-stats {
+  display: grid;
+  gap: 1rem;
+}
+
+/* DESKTOP: 2 colunas, pill no canto inferior direito */
+@media (min-width: 900px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* terceiro card continua organizado na grid normal */
+  .hero-stats .stat-card:nth-child(3) {
+    grid-column: 1 / 2;
+  }
+
+  .compliance-pill {
+    grid-column: 2 / 3;
+    align-self: end;
+    justify-self: end;
+  }
+}
+
+/* MOBILE: tudo em uma coluna, pill abaixo alinhado à direita */
+@media (max-width: 899px) {
+  .hero-stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .compliance-pill {
+    justify-self: flex-end;
+  }
+}
+
+/* ESTILO VISUAL DO PILL – sem absolute! */
+.compliance-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(244,246,249,0.9);
+  border: 1px solid var(--border-light);
+  font-size: 0.7rem;
+  opacity: 0.9;
+  color: var(--text-muted);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #46B549;
+  box-shadow: 0 0 12px #46B549;
+}
+
 
     .stat-card {
       background: rgba(255, 255, 255, 0.85); /* antes 255, 255, 255, 0.95 */
@@ -959,73 +1015,77 @@
   </header>
 
   <!-- HERO -->
-  <main>
-    <section class="hero">
-      <!-- VÍDEO SÓ NO HERO -->
-      <div class="hero-video">
-        <video autoplay muted loop playsinline>
-          <source src="26732-360259372_small.mp4" type="video/mp4">
-        </video>
-      </div>
+ <main>
+  <section class="hero">
+    <!-- VÍDEO SÓ NO HERO -->
+    <div class="hero-video">
+      <video autoplay muted loop playsinline>
+        <source src="26732-360259372_small.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
-      <div class="hero-inner fade-section">
-        <div class="hero-card">
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            Welcome to BioExpress FL
-          </div>
-
-          <h1>
-            <span class="highlight">FAST secure medical delivery</span>
-          </h1>
-
-          <p class="hero-subtitle">
-            Your deliveries handled with speed, accuracy, and total chain-of-custody transparency.
-          </p>
-
-          <div class="hero-tags">
-            <span class="hero-tag">Specimens &amp; lab samples</span>
-            <span class="hero-tag">STAT runs</span>
-            <span class="hero-tag">Pharmacy &amp; supplies</span>
-            <span class="hero-tag">HIPAA-aware operations</span>
-          </div>
-
-          <div class="hero-actions">
-            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-              Request a quote <span class="arrow">→</span>
-            </button>
-            <button class="btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-              Learn more
-            </button>
-          </div>
+    <div class="hero-inner fade-section">
+      <div class="hero-card">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Welcome to BioExpress FL
         </div>
 
-        <div class="hero-stats fade-section">
-          <div class="stat-card">
-            <div class="stat-label">Average pick-up time</div>
-            <div class="stat-value">&lt; 45 min</div>
-            <div class="stat-note">From order confirmation within our coverage area.</div>
-          </div>
+        <h1>
+          <span class="highlight">FAST secure medical delivery</span>
+        </h1>
 
-          <div class="stat-card">
-            <div class="stat-label">On-time delivery rate</div>
-            <div class="stat-value">96.3%</div>
-            <div class="stat-note">Route planning focused on time-sensitive healthcare runs.</div>
-          </div>
+        <p class="hero-subtitle">
+          Your deliveries handled with speed, accuracy, and total chain-of-custody transparency.
+        </p>
 
-          <div class="stat-card">
-            <div class="stat-label">Coverage</div>
-            <div class="stat-value">Central FL</div>
-            <div class="stat-note">Hospitals, clinics, labs, and pharmacies in your region.</div>
-          </div>
+        <div class="hero-tags">
+          <span class="hero-tag">Specimens &amp; lab samples</span>
+          <span class="hero-tag">STAT runs</span>
+          <span class="hero-tag">Pharmacy &amp; supplies</span>
+          <span class="hero-tag">HIPAA-aware operations</span>
+        </div>
 
-            <div class="compliance-pill">
-              <span class="status-dot"></span>
-              HIPAA / OSHA aware operations
-            </div>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Request a quote <span class="arrow">→</span>
+          </button>
+          <button class="btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+            Learn more
+          </button>
         </div>
       </div>
-    </section>
+
+      <div class="hero-stats fade-section">
+        <div class="stat-card">
+          <div class="stat-label">Average pick-up time</div>
+          <div class="stat-value">&lt; 45 min</div>
+          <div class="stat-note">From order confirmation within our coverage area.</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">On-time delivery rate</div>
+          <div class="stat-value">96.3%</div>
+          <div class="stat-note">Route planning focused on time-sensitive healthcare runs.</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">Coverage</div>
+          <div class="stat-value">Central FL</div>
+          <div class="stat-note">Hospitals, clinics, labs, and pharmacies in your region.</div>
+        </div>
+
+        <!-- Pill fora dos cards -->
+        <div class="compliance-pill">
+          <span class="status-dot"></span>
+          HIPAA / OSHA aware operations
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
 
     <!-- ABOUT -->
     <section id="about" class="fade-section">
