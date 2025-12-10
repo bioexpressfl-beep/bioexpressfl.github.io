@@ -298,9 +298,7 @@
 
 
  .hero-stats {
-  display: grid;
-  gap: 1rem;
-  position: relative; /* importante para o absoluto do wrapper */
+ position: relative; /* importante para o absoluto do wrapper */
 }
 
 
@@ -308,18 +306,18 @@
 /* CONTAINER DO PILL + ÍCONES – CANTO INFERIOR DIREITO */
 .compliance-wrapper {
   position: absolute;
-  right: 0.5rem;        /* levemente pra dentro, sem forçar pra fora */
-  bottom: -0.8rem;       /* altura do conjunto */
+  right: 0.8rem;        /* levemente pra dentro, sem forçar pra fora */
+  bottom: 0.2rem;       /* altura do conjunto */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 2.5rem;           /* distância ENTRE faixa e ícones (maior pra não encostar) */
+  gap: 0.8rem;           /* distância ENTRE faixa e ícones (maior pra não encostar) */
 }
 
 /* FAIXA HIPAA FININHA */
 .compliance-pill {
   display: inline-flex;
-  align-items: right-center;
+  align-items: center;
   gap: 0.45rem;
   padding: 0.35rem 1rem;
   border-radius: 999px;
@@ -342,7 +340,7 @@
 .compliance-badges {
   display: flex;
   align-items: center;
-  gap: -3.5rem;
+  gap: 0.6rem;
 }
 
 /* ÍCONES MAIORES */
