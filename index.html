@@ -293,14 +293,73 @@
       cursor: pointer;
     }
 
-    .hero-stats {
-      display: grid;
-      gap: 1rem;
-    }
-.hero-stats {
+
+
+ .hero-stats {
   display: grid;
   gap: 1rem;
+  position: relative; /* importante para o absoluto do wrapper */
 }
+
+
+
+/* BLOCO PILL + SELOS */
+.compliance-wrapper {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+/* pill visual */
+.compliance-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(244,246,249,0.9);
+  border: 1px solid var(--border-light);
+  font-size: 0.7rem;
+  opacity: 0.9;
+  color: var(--text-muted);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #46B549;
+  box-shadow: 0 0 12px #46B549;
+}
+
+/* selos redondos */
+.compliance-badges {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.badge-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.92);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-dark);
+}
+
+
+
+    
 
 /* DESKTOP: 2 colunas, pill no canto inferior direito */
 @media (min-width: 900px) {
@@ -1051,6 +1110,74 @@
     margin-top: 0.3rem;
   }
 }
+/* BLOCO PILL + SELOS */
+.compliance-wrapper {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+/* pill visual */
+.compliance-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(244,246,249,0.9);
+  border: 1px solid var(--border-light);
+  font-size: 0.7rem;
+  opacity: 0.9;
+  color: var(--text-muted);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #46B549;
+  box-shadow: 0 0 12px #46B549;
+}
+
+/* selos redondos */
+.compliance-badges {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.badge-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.92);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-dark);
+}
+
+/* MOBILE – não sobrepor nada, e esconder os selos */
+@media (max-width: 768px) {
+  .compliance-wrapper {
+    position: static;
+    margin-top: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .compliance-badges {
+    display: none;
+  }
+}
+
+    
 
     
   </style>
@@ -1141,18 +1268,18 @@
           <div class="stat-note">Hospitals, clinics, labs, and pharmacies in your region.</div>
         </div>
 
-        <!-- Pill fora dos cards -->
-        <div class="compliance-pill">
-          <span class="status-dot"></span>
-          HIPAA / OSHA aware operations
-        </div>
+        <!-- NOVO BLOCO: pill + selos -->
+  <div class="compliance-wrapper">
+    <div class="compliance-pill">
+      <span class="status-dot"></span>
+      HIPAA / OSHA aware operations
+    </div>
 
-         <!-- NOVOS ÍCONES / SELOS -->
-  <div class="compliance-badges">
-    <span class="badge-icon">HIPAA</span>
-    <span class="badge-icon">OSHA</span>
-    <span class="badge-icon">CERT</span>
-  </div>
+    <div class="compliance-badges">
+      <span class="badge-icon">HIPAA</span>
+      <span class="badge-icon">OSHA</span>
+      <span class="badge-icon">CERT</span>
+    </div>
       
       </div>
     </div>
