@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -897,35 +898,6 @@
   color: var(--text-muted);
 }
 
-    /* PRIVACY POLICY – OCULTA INICIALMENTE */
-#privacy-policy.privacy-hidden {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-}
-
-/* QUANDO ATIVAR */
-#privacy-policy.privacy-visible {
-  max-height: 800px;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* LINK ESTILIZADO NO FORM */
-.policy-link {
-  color: var(--primary);
-  font-weight: 600;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.policy-link:hover {
-  color: var(--accent);
-}
-
-
   </style>
 </head>
 <body>
@@ -1342,11 +1314,10 @@
   </div>
 
   <!-- PRIVACY + STATUS -->
- <p class="contact-note">
+  <p class="contact-note">
   By clicking <strong>Submit</strong> you agree to our
   <a href="#" id="openPolicy" class="policy-link">Privacy Policy</a> for more details.
 </p>
-
 
 
   <button type="submit" class="btn-primary">
@@ -1364,7 +1335,7 @@
   
 <!--- SESSAO ADICIONADA PRIVACY --->
   
-<section id="privacy-policy" class="fade-section privacy-hidden">
+<section id="privacy-policy" class="privacy-hidden fade-section">
   <div class="section-inner">
     <div class="section-header">
       <div class="section-kicker">Privacy</div>
@@ -1397,7 +1368,6 @@
     </div>
   </div>
 </section>
-
 
 
 
@@ -1498,29 +1468,6 @@ policyLink.addEventListener("click", (e) => {
     }, 200);
   }
 });
-
-      /* ========================================
-     PRIVACY POLICY – abrir/fechar seção
-  ======================================== */
-  const policySection = document.getElementById("privacy-policy");
-  const policyLink = document.getElementById("openPolicy");
-
-  if (policySection && policyLink) {
-    policyLink.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      policySection.classList.toggle("privacy-visible");
-      policySection.classList.toggle("privacy-hidden");
-
-      // scroll suave quando abrir
-      if (policySection.classList.contains("privacy-visible")) {
-        setTimeout(() => {
-          policySection.scrollIntoView({ behavior: "smooth" });
-        }, 200);
-      }
-    });
-  }
-
 
 
     
