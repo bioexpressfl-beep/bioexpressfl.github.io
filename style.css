@@ -186,41 +186,26 @@
   margin-top: 0.1rem;
 }
 
-/* PRIVACY POLICY – OCULTA INICIALMENTE */
-#privacy-policy.privacy-hidden {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-}
 
-/* QUANDO ATIVAR */
-#privacy-policy.privacy-visible {
-  max-height: 800px; /* altura máxima */
-  opacity: 1;
-  pointer-events: auto;
-}
 
-/* LINK ESTILIZADO */
+/* LINK ESTILIZADO – VERSÃO NOVA (vermelho) */
 .policy-link {
-  color: var(--primary);
+  color: red !important; /* cor do link */
   font-weight: 600;
   text-decoration: underline;
   cursor: pointer;
 }
 
 .policy-link:hover {
-  color: var(--accent);
+  color: #cc0000 !important; /* hover mais escuro */
 }
 
-/* FORÇA ESCONDER O PRIVACY POLICY POR PADRÃO */
+/* ESCONDE O PRIVACY POLICY POR PADRÃO */
 #privacy-policy {
   display: none !important;
 }
 
-/* QUANDO O JS ATIVAR A SEÇÃO */
+/* MOSTRA QUANDO O JS ATIVAR */
 #privacy-policy.privacy-visible {
   display: block !important;
 }
-
