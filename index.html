@@ -305,30 +305,29 @@
 
 
 
-/* BLOCO PILL + SELOS */
+/* CONTAINER DO PILL + ÍCONES – CANTO INFERIOR DIREITO */
 .compliance-wrapper {
   position: absolute;
-  right: -2.2rem;
-  bottom: 1.9rem;
+  right: 0.5rem;        /* levemente pra dentro, sem forçar pra fora */
+  bottom: 0.8rem;       /* altura do conjunto */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.45rem;
+  gap: 0.7rem;          /* distância ENTRE faixa e ícones (maior pra não encostar) */
 }
 
-/* FAIXA – MANTÉM FINA COMO ANTES */
+/* FAIXA HIPAA FININHA */
 .compliance-pill {
   display: inline-flex;
-  align-items: right-center;
-  gap: 0.35rem;
-  padding: 0.35rem 0.9rem;      /* faixa mais fina */
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 1rem;
   border-radius: 999px;
-  background: rgba(244,246,249,0.9);
+  background: rgba(244,246,249,0.92);
   border: 1px solid var(--border-light);
-  font-size: 0.7rem;
-  opacity: 0.9;
+  font-size: 0.72rem;
   color: var(--text-muted);
-  white-space: nowrap;          /* não quebra em duas linhas */
+  white-space: nowrap;
 }
 
 .status-dot {
@@ -339,38 +338,22 @@
   box-shadow: 0 0 12px #46B549;
 }
 
-/* ÍCONES ABAIXO DO PILL */
+/* LINHA DE ÍCONES ABAIXO, SEM SOBREPOR */
 .compliance-badges {
   display: flex;
-  gap: 0.55rem;
-  padding-right: -1.35rem;  /* ajuda a alinhar melhor com o pill */
+  gap: 0.6rem;
+  margin-top: 0.15rem;  /* espaço extra pra garantir que não “grude” na faixa */
 }
 
-    
-.badge-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  border: 1px solid var(--border-light);
-  background: rgba(255, 255, 255, 0.92);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.62rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--primary-dark);
-}
-
-   /* ÍCONES MAIORES E MAIS BONITOS */
+/* ÍCONES MAIORES */
 .badge-img {
-  width: 48px;          /* AUMENTADO */
+  width: 48px;          /* aumenta o tamanho aqui se quiser mais */
   height: 48px;
   border-radius: 50%;
   object-fit: contain;
   background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.12);
-  padding: 4px;         /* margem interna suave */
+  border: 1px solid rgba(0,0,0,0.6);
+  padding: 4px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.15);
 }
 
@@ -383,9 +366,10 @@
   }
 
   .compliance-badges {
-    display: none;  /* só mostra ícones no desktop */
+    display: none;   /* ícones só no desktop */
   }
 }
+
 
     
 
