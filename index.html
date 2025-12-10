@@ -319,7 +319,7 @@
 /* FAIXA HIPAA FININHA */
 .compliance-pill {
   display: inline-flex;
-  align-items: center;
+  align-items: right-center;
   gap: 0.45rem;
   padding: 0.35rem 1rem;
   border-radius: 999px;
@@ -352,8 +352,8 @@
   border-radius: 50%;
   object-fit: contain;
   background: rgba(255,255,255,0.6); /* branco suave */
-  border: 1px solid rgba(0,0,0,0.08); /* borda super fina */
-  padding: 2px; /* diminui a borda interna */
+  border: 1px solid rgba(0,0,0,0.04); /* borda super fina */
+  padding: 1px; /* diminui a borda interna */
   box-shadow: 0 1px 3px rgba(0,0,0,0.12); /* sombra bem leve */
 }
 
@@ -385,10 +385,11 @@
   }
 
   .compliance-pill {
-    grid-column: 2 / 3;
+    grid-column: 3 / 4;
     align-self: end;
-    justify-self: end;
-  }
+     justify-self: end;
+    margin-right: -40px; /* ajuste o valor */
+}
 }
 
 /* MOBILE: tudo em uma coluna, pill abaixo alinhado à direita */
