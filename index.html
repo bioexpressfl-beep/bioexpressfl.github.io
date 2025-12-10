@@ -1335,7 +1335,7 @@
   
 <!--- SESSAO ADICIONADA PRIVACY --->
   
-<section id="privacy-policy" class="privacy-hidden fade-section">
+<section id="privacy-policy" class="fade-section privacy-hidden">
   <div class="section-inner">
     <div class="section-header">
       <div class="section-kicker">Privacy</div>
@@ -1452,22 +1452,16 @@
       });
     }
 
-    // PRIVACY POLICY – abrir/fechar
 const policySection = document.getElementById("privacy-policy");
 const policyLink = document.getElementById("openPolicy");
 
-policyLink.addEventListener("click", (e) => {
-  e.preventDefault();
-  policySection.classList.toggle("privacy-visible");
-  policySection.classList.toggle("privacy-hidden");
-  
-  // scroll suave até a policy quando abrir
-  if (policySection.classList.contains("privacy-visible")) {
-    setTimeout(() => {
-      policySection.scrollIntoView({ behavior: "smooth" });
-    }, 200);
-  }
-});
+if (policySection && policyLink) {
+  policyLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    policySection.classList.toggle("privacy-visible");
+  });
+}
+
 
 
     
