@@ -1004,6 +1004,21 @@
   }
 }
 
+    /* ===== DESKTOP POSITION FIX FOR HIPAA PILL ===== */
+@media (min-width: 769px) {
+  .hipaa-pill {
+    position: absolute;
+    top: 80px; /* ajuste vertical */
+    right: 60px; /* ajuste horizontal */
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    z-index: 20;
+    transform: translateY(0); /* remove offset do mobile */
+  }
+}
+
+
     
   </style>
 </head>
