@@ -897,7 +897,29 @@
   margin-top: 0.25rem;
   color: var(--text-muted);
 }
+/* LINK ESTILIZADO – VERSÃO VERMELHA */
+.policy-link {
+  color: red !important;          /* vermelho padrão */
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
+.policy-link:hover {
+  color: #cc0000 !important;      /* vermelho mais escuro no hover */
+}
+
+/* ESCONDE O PRIVACY POLICY POR PADRÃO */
+#privacy-policy {
+  display: none !important;
+}
+
+/* MOSTRA QUANDO O JS ADICIONAR A CLASSE */
+#privacy-policy.privacy-visible {
+  display: block !important;
+}
+
+    
   </style>
 </head>
 <body>
