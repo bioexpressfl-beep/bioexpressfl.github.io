@@ -1018,6 +1018,39 @@
   }
 }
 
+/* ===== SELINHOS HIPAA / OSHA / CERT ABAIXO DO PILL ===== */
+
+/* Por padrão, escondidos (mobile-first) */
+.compliance-badges {
+  display: none;
+}
+
+/* Estilo visual dos selos */
+.badge-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.92);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-dark);
+}
+
+/* Só aparece no DESKTOP */
+@media (min-width: 900px) {
+  .compliance-badges {
+    display: flex;
+    gap: 0.4rem;
+    grid-column: 2 / 3;      /* mesma coluna do compliance-pill */
+    justify-self: flex-end;  /* alinha à direita */
+    margin-top: 0.3rem;
+  }
+}
 
     
   </style>
@@ -1113,6 +1146,14 @@
           <span class="status-dot"></span>
           HIPAA / OSHA aware operations
         </div>
+
+         <!-- NOVOS ÍCONES / SELOS -->
+  <div class="compliance-badges">
+    <span class="badge-icon">HIPAA</span>
+    <span class="badge-icon">OSHA</span>
+    <span class="badge-icon">CERT</span>
+  </div>
+      
       </div>
     </div>
   </section>
