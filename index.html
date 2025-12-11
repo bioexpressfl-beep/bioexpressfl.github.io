@@ -1159,7 +1159,121 @@
   }
 }
 
+
+/* ===============================
+   COMPLIANCE SECTION (HIPAA / OSHA / GDPR)
+================================= */
+
+.compliance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.6rem;
+}
+
+.compliance-card {
+  position: relative;
+  background: var(--bg-light-2);
+  border-radius: 20px;
+  border: 1px solid var(--border-light);
+  padding: 1.6rem 1.5rem 1.7rem;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* brilho suave no fundo do card */
+.compliance-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at top left, rgba(0, 83, 155, 0.14), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(70, 181, 73, 0.12), transparent 55%);
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* hover animado */
+.compliance-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
+  border-color: rgba(0, 83, 155, 0.25);
+}
+
+/* área do logo */
+.compliance-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0.9rem;
+}
+
+.compliance-logo {
+  max-width: 72px;
+  max-height: 72px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(15, 23, 42, 0.25));
+}
+
+/* título e texto */
+.compliance-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+
+.compliance-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+/* lista de bullets */
+.compliance-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.compliance-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  margin-bottom: 0.4rem;
+}
+
+.compliance-list li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  margin-top: 0.25rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .compliance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .compliance-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/*===================================================================================*/
     
+
 
     
   </style>
@@ -1401,6 +1515,91 @@
         </div>
       </div>
     </section>
+
+  <!-- COMPLIANCE / PRIVACY -->
+<section id="compliance" class="fade-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-kicker">Compliance & privacy</div>
+      <h2 class="section-title">Designed around healthcare and data regulations</h2>
+      <p class="section-description">
+        BioExpressFL structures routes, documentation, and communication with
+        awareness of HIPAA, OSHA, and GDPR-style data protection principles,
+        so your operations stay aligned with healthcare and privacy expectations.
+      </p>
+    </div>
+
+    <div class="compliance-grid">
+      <!-- HIPAA CARD -->
+      <article class="compliance-card">
+        <div class="compliance-logo-wrap">
+          <!-- TROCAR PELO LOGO HIPAA QUE VOCÊ SUBIR NO GITHUB -->
+          <img
+            src="https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/HIPAA%20LOGO.png?raw=true"
+            alt="HIPAA aware operations"
+            class="compliance-logo"
+          >
+        </div>
+        <h3>HIPAA</h3>
+        <p>
+          Handling of medical records and routing information designed with HIPAA
+          awareness: confidentiality, minimum necessary data, and secure channels.
+        </p>
+        <ul class="compliance-list">
+          <li>Awareness of PHI / ePHI sensitivity</li>
+          <li>Chain-of-custody focus for specimens and documents</li>
+          <li>Use of secure, access-limited tools for communication</li>
+        </ul>
+      </article>
+
+      <!-- OSHA CARD -->
+      <article class="compliance-card">
+        <div class="compliance-logo-wrap">
+          <!-- TROCAR PELO LOGO OSHA -->
+          <img
+            src="https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/LOGO%20OSHA.PNG?raw=true"
+            alt="OSHA safety awareness"
+            class="compliance-logo"
+          >
+        </div>
+        <h3>OSHA & safety</h3>
+        <p>
+          Courier procedures and vehicle setups built with workplace safety in mind:
+          exposure control, handling of infectious materials, and staff training.
+        </p>
+        <ul class="compliance-list">
+          <li>Exposure control mindset for biological materials</li>
+          <li>Safe loading/unloading practices</li>
+          <li>Focus on PPE and safe handling routines</li>
+        </ul>
+      </article>
+
+      <!-- GDPR-LIKE / DATA PRIVACY CARD -->
+      <article class="compliance-card">
+        <div class="compliance-logo-wrap">
+          <!-- TROCAR PELO LOGO GDPR / DATA PROTECTION -->
+          <img
+            src="https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/LOGO%20GDPR.png?raw=true"
+            alt="Data protection awareness"
+            class="compliance-logo"
+          >
+        </div>
+        <h3>Data protection</h3>
+        <p>
+          We treat routing data, contact details, and organizational information with
+          a privacy-first mindset, inspired by GDPR-style best practices.
+        </p>
+        <ul class="compliance-list">
+          <li>No sale of client information or route data</li>
+          <li>Limited access to operational information internally</li>
+          <li>Clear channels to request data updates or removal</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+  
 
    <!-- CONTACT / BOOK NOW -->
 <section id="contact" class="fade-section">
