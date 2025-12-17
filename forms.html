@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BioExpressFL - Forms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Se você usa style.css, mantenha assim -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- HEADER (mesmo padrão do site) -->
+  <header>
+    <div class="nav-container">
+      <div class="logo-area">
+        <a href="index.html">
+          <img src="https://github.com/bioexpressfl-beep/bioexpressfl.github.io/blob/main/PNGGG.png?raw=true" alt="BioExpressFL logo">
+        </a>
+      </div>
+
+      <div class="nav-toggle" id="navToggle"><span></span></div>
+
+      <nav id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a class="nav-active" href="forms.html">Forms</a></li>
+          <li><a href="index.html#contact" class="nav-cta">Get a quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding: 6rem 1.5rem 4rem;">
+    <div class="section-inner">
+      <div class="section-header fade-section">
+        <div class="section-kicker">Client resources</div>
+        <h2 class="section-title">Forms & Documents</h2>
+        <p class="section-description">
+          Download BioExpressFL forms and compliance documents for onboarding and route setup.
+        </p>
+      </div>
+
+      <div class="forms-grid fade-section">
+        <!-- CARD 1 -->
+        <a class="form-card" href="docs/BioExpressFL_Compliance_Safety_Overview_Client.pdf" target="_blank" rel="noopener">
+          <div class="form-badge">PDF</div>
+          <h3>Compliance & Safety Overview (Client)</h3>
+          <p>High-level overview of HIPAA/OSHA-aware operations, safety protocols, and handling standards.</p>
+          <div class="form-meta">Open / Download →</div>
+        </a>
+
+        <!-- EXEMPLOS (adicione mais) -->
+        <a class="form-card" href="docs/BioExpressFL_Chain_of_Custody_Form.pdf" target="_blank" rel="noopener">
+          <div class="form-badge">PDF</div>
+          <h3>Chain of Custody Form</h3>
+          <p>Signature-ready chain-of-custody form for specimen pickups and deliveries.</p>
+          <div class="form-meta">Open / Download →</div>
+        </a>
+
+        <a class="form-card" href="docs/BioExpressFL_Incident_Report.pdf" target="_blank" rel="noopener">
+          <div class="form-badge">PDF</div>
+          <h3>Incident Report</h3>
+          <p>Report delays, temperature excursions, spills, or delivery exceptions.</p>
+          <div class="form-meta">Open / Download →</div>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> BioExpressFL. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile menu
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+    const headerEl = document.querySelector('header');
+
+    navToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+      headerEl.classList.toggle('nav-open');
+    });
+
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        headerEl.classList.remove('nav-open');
+      });
+    });
+
+    // fade in
+    const fadeSections = document.querySelectorAll('.fade-section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    fadeSections.forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>
