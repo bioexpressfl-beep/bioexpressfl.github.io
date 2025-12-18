@@ -7,12 +7,262 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Se você usa style.css, mantenha assim -->
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary: #00539B;
+      --primary-dark: #003867;
+      --accent: #46B549;
+
+      --bg-light: #ffffff;
+      --bg-light-2: #f4f6f9;
+      --bg-glass: rgba(255, 255, 255, 0.78);
+
+      --text-dark: #1b1f24;
+      --text-muted: #5f6b76;
+
+      --border-light: rgba(0,0,0,0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ====== NAVBAR ====== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.82);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo-area { display: flex; align-items: center; gap: 0.7rem; }
+    .logo-area img { height: 44px; width: auto; object-fit: contain; opacity: 0.96; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      position: relative;
+      opacity: 0.82;
+      transition: all 0.2s ease;
+      color: var(--text-dark);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -0.2rem;
+      width: 0; height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 0.2s ease;
+    }
+
+    nav a:hover { opacity: 1; }
+    nav a:hover::after { width: 100%; }
+
+    .nav-active { opacity: 1; }
+    .nav-active::after { width: 100%; }
+
+    .nav-cta {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 83, 155, 0.25);
+      background: linear-gradient(135deg, rgba(0, 83, 155, 0.12), rgba(70, 181, 73, 0.16));
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary-dark);
+    }
+
+    /* ====== MOBILE MENU ====== */
+    .nav-toggle {
+      display: none;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.12);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: rgba(255,255,255,0.9);
+    }
+
+    .nav-toggle span,
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      content: "";
+      display: block;
+      width: 16px; height: 2px;
+      border-radius: 99px;
+      background: var(--primary-dark);
+      position: relative;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .nav-toggle span::before { position: absolute; top: -5px; }
+    .nav-toggle span::after { position: absolute; top: 5px; }
+
+    .nav-open .nav-toggle span { transform: rotate(45deg); }
+    .nav-open .nav-toggle span::before { transform: rotate(-90deg) translateX(-5px); }
+    .nav-open .nav-toggle span::after { opacity: 0; }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: inline-flex; }
+
+      nav {
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(18px);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease-out;
+      }
+      nav.open { max-height: 240px; }
+
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.75rem 1.5rem 1rem;
+      }
+    }
+
+    /* ====== PAGE WRAPPER ====== */
+    main { padding: 6rem 1.5rem 4rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-header { margin-bottom: 1.6rem; max-width: 720px; }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      opacity: 0.8;
+      margin-bottom: 0.4rem;
+      color: var(--primary-dark);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-dark);
+    }
+
+    .section-description {
+      opacity: 0.9;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* ====== FORMS GRID ====== */
+    .forms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-card {
+      position: relative;
+      display: block;
+      padding: 1.4rem;
+      border-radius: 18px;
+      background: var(--bg-light-2);
+      border: 1px solid var(--border-light);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .form-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    .form-badge {
+      display: inline-flex;
+      align-items: center;
+      height: 26px;
+      padding: 0 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      margin-bottom: 0.75rem;
+    }
+
+    .form-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      color: var(--primary-dark);
+    }
+
+    .form-card p {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .form-meta {
+      font-size: 0.85rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .forms-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 600px) {
+      .forms-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+
+    /* ====== ANIMAÇÃO ====== */
+    .fade-section {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      padding: 1.5rem;
+      font-size: 0.78rem;
+      text-align: center;
+      opacity: 0.7;
+      background: rgba(255,255,255,0.9);
+      border-top: 1px solid var(--border-light);
+      color: var(--text-muted);
+    }
+  </style>
 </head>
 
 <body>
-  <!-- HEADER (mesmo padrão do site) -->
   <header>
     <div class="nav-container">
       <div class="logo-area">
@@ -35,7 +285,7 @@
     </div>
   </header>
 
-  <main style="padding: 6rem 1.5rem 4rem;">
+  <main>
     <div class="section-inner">
       <div class="section-header fade-section">
         <div class="section-kicker">Client resources</div>
@@ -46,19 +296,17 @@
       </div>
 
       <div class="forms-grid fade-section">
-        <!-- CARD 1 -->
         <a class="form-card" href="docs/BioExpressFL_Compliance_Safety_Overview_Client.pdf" target="_blank" rel="noopener">
           <div class="form-badge">PDF</div>
           <h3>Compliance & Safety Overview (Client)</h3>
-          <p>High-level overview of HIPAA/OSHA-aware operations, safety protocols, and handling standards.</p>
+          <p>Client-friendly overview of safety standards, HIPAA/OSHA awareness, and handling expectations.</p>
           <div class="form-meta">Open / Download →</div>
         </a>
 
-        <!-- EXEMPLOS (adicione mais) -->
         <a class="form-card" href="docs/BioExpressFL_Chain_of_Custody_Form.pdf" target="_blank" rel="noopener">
           <div class="form-badge">PDF</div>
           <h3>Chain of Custody Form</h3>
-          <p>Signature-ready chain-of-custody form for specimen pickups and deliveries.</p>
+          <p>Signature-ready chain-of-custody documentation for pickups and deliveries.</p>
           <div class="form-meta">Open / Download →</div>
         </a>
 
@@ -68,7 +316,6 @@
           <p>Report delays, temperature excursions, spills, or delivery exceptions.</p>
           <div class="form-meta">Open / Download →</div>
         </a>
-
       </div>
     </div>
   </main>
